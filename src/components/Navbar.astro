@@ -1,0 +1,173 @@
+---
+const navItems = [
+  { label: "Home", href: "#home", active: true },
+  { label: "Menu", href: "#menu" },
+  { label: "Our Story", href: "#story" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Events", href: "#events" },
+  { label: "Contact", href: "#contact" },
+];
+
+---
+
+
+ 
+ <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+
+  <header
+    data-hero-reveal
+    class="relative z-30 px-5 pt-5 sm:px-8 lg:px-10 lg:pt-7"
+  >
+    <nav
+      class="mx-auto flex h-[74px] max-w-[1460px] items-center justify-between rounded-[22px] border border-white/15 bg-black/25 px-5 backdrop-blur-md sm:px-7 lg:px-8"
+      aria-label="Main navigation"
+    >
+      <!-- Logo -->
+      <a
+        href="#home"
+        class="group flex shrink-0 items-center gap-3"
+        aria-label="Foresto Paradise home"
+      >
+        <!-- Logo mark -->
+        <span class="relative flex h-12 w-8 items-center justify-center">
+          <svg
+            viewBox="0 0 40 64"
+            fill="none"
+            class="h-12 w-8 text-[#C99A69]"
+            aria-hidden="true"
+          >
+            <path
+              d="M20 60C20 43 21 28 30 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M25 27C18 25 13 21 11 15C18 15 23 18 25 23"
+              fill="currentColor"
+            />
+
+            <path
+              d="M28 20C29 13 34 8 39 7C39 14 35 19 29 22"
+              fill="currentColor"
+            />
+
+            <path
+              d="M21 38C14 36 9 32 7 26C14 27 19 30 21 35"
+              fill="currentColor"
+            />
+
+            <path
+              d="M22 47C29 44 34 40 36 34C29 35 24 39 22 44"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+
+        <span class="hidden sm:block">
+          <span
+            class="block font-['Cormorant_Garamond'] text-[27px] leading-none tracking-[-0.02em]"
+          >
+            Foresto Paradise
+          </span>
+
+          <span
+            class="mt-1 block text-[8px] font-medium uppercase tracking-[0.38em] text-white/55"
+          >
+            Restaurant & Lounge
+          </span>
+        </span>
+      </a>
+
+      <!-- Desktop navigation -->
+      <div class="hidden items-center gap-8 lg:flex">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "relative py-2 text-[14px] transition-colors duration-300",
+                item.active
+                  ? "text-white"
+                  : "text-white/70 hover:text-white",
+              ]}
+            >
+              {item.label}
+
+              {item.active && (
+                <span class="absolute -bottom-1 left-0 h-px w-full bg-[#C99A69]" />
+              )}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Reservation CTA -->
+      <a
+        href="#reservation"
+        class="group relative hidden items-center gap-2.5 overflow-hidden rounded-full bg-[#E8B875] px-6 py-3 text-[13px] font-semibold text-[#171714] shadow-[0_0_0_1px_rgba(255,220,165,0.35),0_8px_25px_rgba(168,115,67,0.35),0_0_45px_rgba(232,184,117,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F0C98F] hover:shadow-[0_0_0_1px_rgba(255,225,180,0.55),0_10px_30px_rgba(168,115,67,0.45),0_0_55px_rgba(232,184,117,0.3)] lg:flex"
+      >
+        <!-- Soft inner glow -->
+        <span
+          class="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/30 via-transparent to-transparent opacity-70"
+        ></span>
+
+        <!-- Moving highlight -->
+        <span
+          class="pointer-events-none absolute -left-1/2 top-0 h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-100"
+        ></span>
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="relative z-10 h-[17px] w-[17px] font-bold"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="16"
+            rx="2"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+
+          <path
+            d="M8 3V7M16 3V7M3 10H21"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <span class="relative z-10 font-semibold">
+          Reserve a Table
+        </span>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        type="button"
+        class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white lg:hidden"
+        aria-label="Open navigation menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 7H20M4 12H20M4 17H20"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+    </nav>
+  </header>

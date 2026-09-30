@@ -1,0 +1,1441 @@
+---
+/*
+ * Foresto Paradise — Chef's Special Creations
+ *
+ * IMAGE PLACEHOLDERS:
+ *
+ * 1. chef-image
+ * 2. dish-card-1
+ * 3. dish-card-2
+ * 4. dish-card-3
+ * 5. dish-card-4
+ * 6. bottom-right-food
+ *
+ * Replace the src values with your actual images.
+ */
+
+const categories = [
+  {
+    label: "Chef's Signatures",
+    icon: "chef",
+    active: true,
+  },
+  {
+    label: "Starters",
+    icon: "leaf",
+  },
+  {
+    label: "Main Course",
+    icon: "cloche",
+  },
+  {
+    label: "Tandoor",
+    icon: "fire",
+  },
+  {
+    label: "Rice & Breads",
+    icon: "bowl",
+  },
+  {
+    label: "Desserts",
+    icon: "cake",
+  },
+];
+
+const dishes = [
+  // ==================== CHEF'S SIGNATURES ====================
+  {
+    name: "Herb Crusted Lamb Chops",
+    price: "₹ 1,250",
+    description:
+      "Tender lamb chops marinated in fresh herbs and spices, served with roasted vegetables and chef's special sauce.",
+    image:
+      "https://images.unsplash.com/photo-1692106914406-093b0df73a10?auto=format&fit=crop&q=80&w=800",
+    badge: "CHEF'S SIGNATURE",
+    category: "Chef's Signatures",
+    tags: [
+      { label: "Signature", type: "accent" },
+      { label: "Gluten Free", type: "neutral" },
+    ],
+  },
+  {
+    name: "Truffle Mushroom Risotto",
+    price: "₹ 950",
+    description:
+      "Creamy arborio rice cooked to perfection with wild mushrooms, truffle oil, and aged parmesan.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1694850980439-61487c39be4f?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Chef's Signatures",
+    tags: [
+      { label: "Vegetarian", type: "green" },
+      { label: "Chef's Special", type: "neutral" },
+    ],
+  },
+  {
+    name: "Seared Pan Atlantic Salmon",
+    price: "₹ 1,350",
+    description:
+      "Pan-seared crisp salmon filet served with saffron cream sauce, wilted spinach, and baby potatoes.",
+    image:
+      "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=800",
+    badge: "CHEF'S SIGNATURE",
+    category: "Chef's Signatures",
+    tags: [
+      { label: "Non-Veg", type: "red" },
+      { label: "Seafood", type: "neutral" },
+    ],
+  },
+  {
+    name: "Smoked Butter Chicken Gelato",
+    price: "₹ 1,100",
+    description:
+      "Slow-cooked charcoal-infused rich chicken curry served with mini velvet garlic naan and house butter.",
+    image:
+      "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&q=80&w=800",
+    badge: "MUST TRY",
+    category: "Chef's Signatures",
+    tags: [
+      { label: "Non-Veg", type: "red" },
+      { label: "Signature", type: "accent" },
+    ],
+  },
+
+  // ==================== STARTERS ====================
+  {
+    name: "Avocado & Citrus Salad",
+    price: "₹ 550",
+    description:
+      "Fresh hass avocado slices, grapefruit, organic arugula, and toasted walnuts with lime vinaigrette.",
+    image:
+      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Starters",
+    tags: [
+      { label: "Vegetarian", type: "green" },
+      { label: "Healthy", type: "neutral" },
+    ],
+  },
+  {
+    name: "Crispy Soft Shell Tacos",
+    price: "₹ 620",
+    description:
+      "Handmade corn tortillas stuffed with spiced cottage cheese, pickled red onions, and chipotle crema.",
+    image:
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Starters",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+  {
+    name: "Crispy Calamari Rings",
+    price: "₹ 680",
+    description:
+      "Lightly battered deep-fried calamari tossed with sea salt, cracked black pepper, and garlic aioli.",
+    image:
+      "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Starters",
+    tags: [
+      { label: "Non-Veg", type: "red" },
+      { label: "Crispy", type: "neutral" },
+    ],
+  },
+  {
+    name: "Paneer Tikka Croquettes",
+    price: "₹ 580",
+    description:
+      "Smoky spiced paneer mash folded with herbs, panko-crusted and fried gold with spicy mint chutney.",
+    image:
+      "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Starters",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+
+  // ==================== MAIN COURSE ====================
+  {
+    name: "Paneer Lababdar",
+    price: "₹ 720",
+    description:
+      "Cubes of fresh cottage cheese cooked in a rich, creamy tomato and cashew onion gravy.",
+    image:
+      "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Main Course",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+  {
+    name: "Slow Cooked Lamb Rogan Josh",
+    price: "₹ 890",
+    description:
+      "Traditional Kashmiri dish prepared with tender lamb simmered in aromatic whole spices and kashmiri chili.",
+    image:
+      "https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Main Course",
+    tags: [
+      { label: "Non-Veg", type: "red" },
+      { label: "Spicy", type: "neutral" },
+    ],
+  },
+  {
+    name: "Classic Chicken Tikka Masala",
+    price: "₹ 790",
+    description:
+      "Roasted chicken chunks served in a rich, velvety spiced tomato gravy infused with fenugreek.",
+    image:
+      "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=800",
+    badge: "POPULAR",
+    category: "Main Course",
+    tags: [{ label: "Non-Veg", type: "red" }],
+  },
+  {
+    name: "Dal Makhani Grand",
+    price: "₹ 620",
+    description:
+      "Black lentils slow-cooked overnight over charcoal, finished with churned butter and fresh cream.",
+    image:
+      "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Main Course",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+
+  // ==================== TANDOOR ====================
+  {
+    name: "Tandoori Jumbo Prawns",
+    price: "₹ 1,150",
+    description:
+      "Succulent jumbo prawns marinated in traditional spices, grilled to perfection, served with mint chutney.",
+    image:
+      "https://images.unsplash.com/photo-1687020835890-b0b8c6a04613?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Tandoor",
+    tags: [
+      { label: "Non-Veg", type: "red" },
+      { label: "Tandoor", type: "neutral" },
+    ],
+  },
+  {
+    name: "Classic Tandoori Chicken",
+    price: "₹ 750",
+    description:
+      "Bone-in spring chicken marinated overnight in hung curd, mustard oil, and kashmiri chili, roasted in clay oven.",
+    image:
+      "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Tandoor",
+    tags: [{ label: "Non-Veg", type: "red" }],
+  },
+  {
+    name: "Malai Broccoli Tikka",
+    price: "₹ 580",
+    description:
+      "Broccoli florets steeped in cheese, cream, cardamom, and white pepper, char-grilled in tandoor.",
+    image:
+      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Tandoor",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+  {
+    name: "Ajwaini Fish Tikka",
+    price: "₹ 820",
+    description:
+      "Fresh river sole fish marinated with carom seeds, ginger-garlic, and yellow chili powder, grilled to order.",
+    image:
+      "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Tandoor",
+    tags: [{ label: "Non-Veg", type: "red" }],
+  },
+
+  // ==================== RICE & BREADS ====================
+  {
+    name: "Hyderabadi Dum Biryani",
+    price: "₹ 750",
+    description:
+      "Fragrant basmati rice layered with spiced marinated meat, saffron, and ghee, cooked under sealed dum.",
+    image:
+      "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=800",
+    badge: "BESTSELLER",
+    category: "Rice & Breads",
+    tags: [{ label: "Non-Veg", type: "red" }],
+  },
+  {
+    name: "Garlic Butter Naan Basket",
+    price: "₹ 240",
+    description:
+      "Assorted soft leavened breads baked in clay oven brushed with roasted garlic and clarified butter.",
+    image:
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Rice & Breads",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+  {
+    name: "Wild Mushroom Pulao",
+    price: "₹ 520",
+    description:
+      "Aromatic long-grain rice wok-tossed with sautéed wild mushrooms, whole spices, and crispy onions.",
+    image:
+      "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Rice & Breads",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+  {
+    name: "Stuffed Amritsari Kulcha",
+    price: "₹ 280",
+    description:
+      "Crispy layered bread stuffed with spiced potatoes and onion, served with tangy chole dip.",
+    image:
+      "https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Rice & Breads",
+    tags: [{ label: "Vegetarian", type: "green" }],
+  },
+
+  // ==================== DESSERTS ====================
+  {
+    name: "Chocolate Lava Cake",
+    price: "₹ 650",
+    description:
+      "Warm chocolate cake with a molten center, served with vanilla ice cream and berry compote.",
+    image:
+      "https://images.unsplash.com/photo-1673551490812-eaee2e9bf0ef?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Desserts",
+    tags: [
+      { label: "Vegetarian", type: "green" },
+      { label: "Dessert", type: "blue" },
+    ],
+  },
+  {
+    name: "Saffron & Pistachio Kulfi",
+    price: "₹ 420",
+    description:
+      "Traditional Indian reduced milk ice cream infused with royal saffron and crushed pistachios.",
+    image:
+      "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Desserts",
+    tags: [
+      { label: "Vegetarian", type: "green" },
+      { label: "Dessert", type: "blue" },
+    ],
+  },
+  {
+    name: "Classic New York Cheesecake",
+    price: "₹ 580",
+    description:
+      "Rich and smooth baked cream cheese cake with a graham cracker crust and fresh raspberry glaze.",
+    image:
+      "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&q=80&w=800",
+    badge: null,
+    category: "Desserts",
+    tags: [
+      { label: "Vegetarian", type: "green" },
+      { label: "Dessert", type: "blue" },
+    ],
+  },
+  {
+    name: "Gulab Jamun with Rabri",
+    price: "₹ 450",
+    description:
+      "Warm golden milk dumplings soaked in cardamom sugar syrup served atop chilled thickened milk.",
+    image:
+      "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800",
+    badge: "TRADITIONAL",
+    category: "Desserts",
+    tags: [
+      { label: "Vegetarian", type: "green" },
+      { label: "Dessert", type: "blue" },
+    ],
+  },
+];
+---
+
+<section
+  id="menu"
+  class="relative overflow-hidden bg-[#F9F7F1] py-20 text-[#171714] sm:py-24 lg:py-[92px]"
+>
+  <!-- =========================================================
+       BACKGROUND ATMOSPHERE
+       ========================================================= -->
+
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- Extremely subtle warm glow -->
+    <div
+      class="absolute left-[-8%] top-[4%] h-[430px] w-[430px] rounded-full bg-[#A87343]/[0.035] blur-[90px]"
+    ></div>
+
+    <div
+      class="absolute right-[-8%] top-[28%] h-[500px] w-[500px] rounded-full bg-[#737A4A]/[0.025] blur-[110px]"
+    ></div>
+
+    <!-- Bottom-right image atmosphere -->
+    <div
+      class="absolute -bottom-[160px] -right-[100px] h-[390px] w-[580px] overflow-hidden opacity-[0.14] blur-[1px]"
+    >
+      <!-- IMAGE PLACEHOLDER -->
+      <img
+        src="/images/menu/bottom-right-food.webp"
+        alt=""
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-[#F9F7F1]/40"></div>
+    </div>
+
+    <!-- =======================================================
+         TOP LEFT BLURRED BOTANICAL
+         ======================================================= -->
+
+    <div
+      class="absolute -left-[80px] top-[80px] h-[260px] w-[160px] opacity-[0.18] blur-[10px]"
+    >
+      <div
+        class="absolute left-[55px] top-0 h-[260px] w-[45px] rotate-[25deg] rounded-[50%] bg-[#737A4A]/20"
+      ></div>
+
+      <div
+        class="absolute left-[20px] top-[80px] h-[130px] w-[65px] -rotate-[30deg] rounded-[50%] bg-[#737A4A]/15"
+      ></div>
+    </div>
+
+    <!-- =======================================================
+         BOTTOM LEFT LINE ART
+         ======================================================= -->
+
+    <svg
+      viewBox="0 0 330 210"
+      fill="none"
+      class="absolute -bottom-3 left-[-25px] w-[300px] text-[#A87343]/20 sm:left-0 sm:w-[330px]"
+      aria-hidden="true"
+    >
+      <path
+        d="M4 203C38 161 67 125 105 105C137 88 177 76 220 78"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M57 146C65 123 82 108 103 101C100 122 83 140 59 147"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M93 112C105 90 125 75 148 72C144 96 125 111 95 114"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M131 91C149 66 170 53 195 51C189 77 168 91 133 94"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M36 173C63 169 84 176 100 191C74 197 51 190 36 174"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M86 137C111 137 132 146 146 164C121 165 99 155 86 138"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <path
+        d="M133 105C159 106 179 117 192 136C166 136 146 126 133 106"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+
+  <!-- =========================================================
+       MAIN CONTAINER
+       ========================================================= -->
+
+  <div class="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-10">
+    <!-- =======================================================
+         INTRO / CHEF AREA
+         ======================================================= -->
+
+    <div class="relative grid items-start gap-10 lg:grid-cols-[1fr_0.9fr]">
+      <!-- LEFT -->
+      <div class="relative z-10 pt-1">
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-4">
+          <span
+            class="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#A87343]"
+          >
+            Signature Menu
+          </span>
+
+          <span class="h-px w-16 bg-[#A87343]/70"></span>
+        </div>
+
+        <!-- Heading -->
+        <h2
+          class="mt-5 max-w-[590px] font-['Cormorant_Garamond'] text-[clamp(3.7rem,5.4vw,5.2rem)] font-medium leading-[0.86] tracking-[-0.045em]"
+        >
+          <span class="block text-[#171714]">
+            Chef’s Special
+          </span>
+
+          <span
+            class="block bg-gradient-to-r from-[#A87343] via-[#B9793E] to-[#C99560] bg-clip-text text-transparent"
+          >
+            Creations
+          </span>
+        </h2>
+
+        <!-- Description -->
+        <p
+          class="mt-5 max-w-[600px] text-[15px] leading-[1.55] text-[#4F4D48] sm:text-[17px]"
+        >
+          A culinary journey of handpicked dishes, crafted with the finest
+          ingredients and inspired by rich traditions.
+        </p>
+      </div>
+
+      <!-- =====================================================
+           CHEF QUOTE / IMAGE
+           ===================================================== -->
+
+      <div
+        class="relative hidden min-h-[250px] lg:block"
+      >
+        <!-- Quote -->
+        <div
+          class="absolute left-[4%] top-[32px] z-20 max-w-[250px]"
+        >
+          <p
+            class="font-['Cormorant_Garamond'] text-[29px] font-medium italic leading-[1.08] tracking-[-0.02em] text-[#4D4A45]"
+          >
+            “Great food is
+            <br />
+            not just a meal,
+            <br />
+            it’s a memory.”
+          </p>
+
+          <div class="mt-5 flex items-center gap-3">
+            <span class="h-px w-4 bg-[#A87343]"></span>
+
+            <div>
+              <p
+                class="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#292722]"
+              >
+                Chef Arjun
+              </p>
+
+              <p class="mt-1 text-[11px] text-[#77736B]">
+                Executive Chef
+              </p>
+            </div>
+          </div>
+
+          <!-- Decorative arrow -->
+          <svg
+            viewBox="0 0 100 70"
+            fill="none"
+            class="absolute -right-[75px] top-[125px] w-[100px] text-[#8E5C35]"
+            aria-hidden="true"
+          >
+            <path
+              d="M2 6C26 12 40 27 51 42C59 53 68 59 82 60"
+              stroke="currentColor"
+              stroke-width="1.3"
+              stroke-linecap="round"
+              stroke-dasharray="3 4"
+            />
+
+            <path
+              d="M73 52L83 60L72 65"
+              stroke="currentColor"
+              stroke-width="1.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <!-- Chef image -->
+        <div
+          class="absolute right-[-20px] top-[-38px] h-[310px] w-[400px]"
+        >
+          <!-- Soft circular background -->
+          <div
+            class="absolute right-[50px] top-[30px] h-[245px] w-[245px] rounded-full bg-[#E9D2B8]/65"
+          ></div>
+
+          <!-- IMAGE PLACEHOLDER -->
+          <img
+            src="/images/chef.webp"
+            alt=""
+            class="relative z-10 h-full w-full object-cover object-bottom"
+          />
+
+          <!-- Botanical line art -->
+          <svg
+            viewBox="0 0 100 150"
+            fill="none"
+            class="absolute right-[-4px] top-[50px] z-20 h-[145px] w-[95px] text-[#A87343]/55"
+            aria-hidden="true"
+          >
+            <path
+              d="M15 143C20 105 43 75 75 55C87 47 94 37 98 23"
+              stroke="currentColor"
+              stroke-width="1.3"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M42 85C28 82 19 74 16 63C30 63 40 71 43 82"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M59 69C56 54 62 43 73 34C77 48 71 60 61 70"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M75 54C73 40 81 28 93 22C94 36 87 47 76 55"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================
+         CATEGORY NAVIGATION
+         ======================================================= -->
+
+    <div
+      class="mt-9 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none lg:mt-7"
+    >
+      {
+        categories.map((category) => (
+          <button
+            type="button"
+            data-category={category.label}
+            class:list={[
+              "category-btn group flex h-[46px] shrink-0 items-center gap-3 rounded-full px-5 text-[13px] transition-all duration-300",
+              category.active
+                ? "bg-[#A87343] text-white shadow-[0_8px_22px_rgba(168,115,67,0.18)] active-category"
+                : "text-[#292722] hover:bg-[#A87343]/[0.07] hover:text-[#8E5C35]",
+            ]}
+          >
+            <!-- CHEF ICON -->
+            {category.icon === "chef" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-[21px] w-[21px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 18V11.5C5.3 11.1 4 9.6 4 7.8C4 5.7 5.7 4 7.8 4C8.5 4 9.2 4.2 9.8 4.6C10.5 3.2 11.8 2.3 13.4 2.3C15.5 2.3 17.2 4 17.2 6.1C17.2 6.5 17.1 6.9 17 7.2C18.7 7.5 20 9 20 10.8C20 12.8 18.4 14.3 16.5 14.5V18"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M7 18H17M8 18V21H16V18"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            )}
+
+            <!-- LEAF -->
+            {category.icon === "leaf" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-[21px] w-[21px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20 4C11 4 5 8.5 5 14.5C5 17.8 7.5 20 11 20C17 20 20 13 20 4Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M4 21C7 16 10 13 15 10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            )}
+
+            <!-- CLOCHE -->
+            {category.icon === "cloche" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-[21px] w-[21px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 17H20"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M6 17C6 11.5 9 8 12 8C15 8 18 11.5 18 17"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M10 6C10 4.9 10.9 4 12 4C13.1 4 14 4.9 14 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M3 19H21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            )}
+
+            <!-- FIRE -->
+            {category.icon === "fire" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-[21px] w-[21px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 21C16.5 21 19 18.1 19 14.4C19 10.3 16.1 8.2 14.1 5C13.7 8.4 11.8 9.6 10.5 10.8C9.5 8.7 9.8 6.8 10.5 5C6.9 7.2 5 10.8 5 14.2C5 18.1 7.6 21 12 21Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            )}
+
+            <!-- BOWL -->
+            {category.icon === "bowl" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-[21px] w-[21px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 10H20C20 15.5 16.5 19 12 19C7.5 19 4 15.5 4 10Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M6 7C7 5.5 8.5 5 10 5M14 5C15.5 5 17 5.5 18 7"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            )}
+
+            <!-- CAKE -->
+            {category.icon === "cake" && (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-[21px] w-[21px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 12H20V19H4V12Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M4 15H20M8 12V9M12 12V9M16 12V9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M7 7C7 5.9 7.9 5 9 5C10.1 5 11 5.9 11 7C11 5.9 11.9 5 13 5C14.1 5 15 5.9 15 7C15 5.9 15.9 5 17 5C18.1 5 19 5.9 19 7"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            )}
+
+            <span>{category.label}</span>
+          </button>
+        ))
+      }
+
+      <!-- View full menu -->
+      <a
+        href="/menu"
+        class="ml-auto hidden shrink-0 items-center gap-3 border-b border-[#A87343]/70 pb-1 text-[13px] font-medium text-[#8E5C35] transition-colors hover:text-[#A87343] lg:flex"
+      >
+        View Full Menu
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-4 w-4"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12H19M13 6L19 12L13 18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- =======================================================
+         DISH CARDS
+         ======================================================= -->
+
+    <div class="relative mt-5">
+      <!-- Left navigation -->
+      <!-- <button
+        type="button"
+        aria-label="Previous dishes"
+        class="absolute -left-[58px] top-1/2 z-20 hidden h-[54px] w-[54px] -translate-y-1/2 items-center justify-center rounded-full border border-[#E1DDD4] bg-white text-[#292722] shadow-[0_5px_20px_rgba(30,25,18,0.06)] transition-all duration-300 hover:-translate-y-1/2 hover:border-[#A87343] hover:text-[#A87343] xl:flex"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            d="M19 12H5M11 6L5 12L11 18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button> -->
+
+      <!-- Cards -->
+      <div
+        class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 min-h-[350px]"
+      >
+        {
+          dishes.map((dish, index) => (
+            <article
+              data-category={dish.category}
+              class="dish-card group overflow-hidden rounded-[17px] bg-white shadow-[0_8px_35px_rgba(30,25,18,0.055)] ring-1 ring-[#E8E4DB] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(30,25,18,0.09)]"
+            >
+              <!-- IMAGE -->
+              <div class="relative h-[235px] overflow-hidden bg-[#EAE6DD]">
+                <!-- IMAGE PLACEHOLDER -->
+                <img
+                  src={dish.image}
+                  alt={dish.name}
+                  class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                />
+
+                <!-- subtle image overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent"></div>
+
+                <!-- Badge -->
+                {dish.badge && (
+                  <div class="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-[#F4D28D] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.04em] text-[#4B321D] shadow-sm">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 3L14 7L18.5 7.5L15.2 10.7L16 15L12 13L8 15L8.8 10.7L5.5 7.5L10 7L12 3Z"
+                        stroke="currentColor"
+                        stroke-width="1.4"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    {dish.badge}
+                  </div>
+                )}
+
+                <!-- Favourite -->
+                <button
+                  type="button"
+                  aria-label={`Add ${dish.name} to favourites`}
+                  class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 bg-black/20 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-[#A87343]"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="h-[19px] w-[19px]"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20.8 8.8C20.8 13.5 12 19 12 19C12 19 3.2 13.5 3.2 8.8C3.2 6.2 5.1 4.5 7.4 4.5C9.1 4.5 10.7 5.4 12 6.8C13.3 5.4 14.9 4.5 16.6 4.5C18.9 4.5 20.8 6.2 20.8 8.8Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- CONTENT -->
+              <div class="px-[18px] pb-[18px] pt-[15px]">
+                <!-- Name + price -->
+                <div class="flex items-start justify-between gap-3">
+                  <h3
+                    class="font-['Cormorant_Garamond'] text-[21px] font-semibold leading-[1.05] tracking-[-0.015em] text-[#171714]"
+                  >
+                    {dish.name}
+                  </h3>
+
+                  <span
+                    class="shrink-0 pt-0.5 font-['Cormorant_Garamond'] text-[17px] font-semibold text-[#A87343]"
+                  >
+                    {dish.price}
+                  </span>
+                </div>
+
+                <!-- Description -->
+                <p
+                  class="mt-2.5 min-h-[68px] text-[13px] leading-[1.48] text-[#76736D]"
+                >
+                  {dish.description}
+                </p>
+
+                <!-- Tags -->
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {
+                    dish.tags.map((tag) => (
+                      <span
+                        class:list={[
+                          "rounded-full px-3 py-1.5 text-[10px] font-medium",
+                          tag.type === "accent" &&
+                            "bg-[#B87935] text-white",
+                          tag.type === "green" &&
+                            "bg-[#E8F2EA] text-[#43815A]",
+                          tag.type === "red" &&
+                            "bg-[#FCE8E7] text-[#C14B45]",
+                          tag.type === "blue" &&
+                            "bg-[#EEF2F5] text-[#56697A]",
+                          tag.type === "neutral" &&
+                            "bg-[#F1F0ED] text-[#41413E]",
+                        ]}
+                      >
+                        {tag.label}
+                      </span>
+                    ))
+                  }
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Right navigation -->
+      <!-- <button
+        type="button"
+        aria-label="Next dishes"
+        class="absolute -right-[58px] top-1/2 z-20 hidden h-[54px] w-[54px] -translate-y-1/2 items-center justify-center rounded-full border border-[#E1DDD4] bg-white text-[#292722] shadow-[0_5px_20px_rgba(30,25,18,0.06)] transition-all duration-300 hover:-translate-y-1/2 hover:border-[#A87343] hover:text-[#A87343] xl:flex"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12H19M13 6L19 12L13 18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button> -->
+    </div>
+
+    <!-- =======================================================
+         BOTTOM CTA
+         ======================================================= -->
+
+    <div class="relative z-10 mt-7 flex flex-col items-center">
+      <a
+        href="/menu"
+        class="group inline-flex h-[54px] items-center gap-5 rounded-full bg-[#A87343] px-9 text-[14px] font-medium text-white shadow-[0_10px_28px_rgba(168,115,67,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8F6038] hover:shadow-[0_14px_35px_rgba(168,115,67,0.24)]"
+      >
+        <span>
+          Explore Full Menu
+        </span>
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12H19M13 6L19 12L13 18"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+
+      <!-- Decorative separator -->
+      <div class="mt-5 flex items-center gap-5 text-[#A87343]/55">
+        <span class="h-px w-14 bg-current"></span>
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            d="M8 3V21M5 3V9C5 10.7 6.3 12 8 12C9.7 12 11 10.7 11 9V3M16 3V21M13.5 3C16 3.8 18 6.2 18 9V21"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <span class="h-px w-14 bg-current"></span>
+      </div>
+
+      <p
+        class="mt-3 text-[9px] font-medium uppercase tracking-[0.30em] text-[#9A8978]"
+      >
+        Same Great Taste, Many More Dishes
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const dishCards = document.querySelectorAll('.dish-card');
+
+    function filterDishes(category) {
+      dishCards.forEach((card) => {
+        if (card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+          // Slight timeout to ensure display: block applies before opacity transitions
+          setTimeout(() => {
+            card.style.opacity = '1';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300); // Matches typical transition speed
+        }
+      });
+    }
+
+    categoryBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Reset all buttons to inactive state
+        categoryBtns.forEach((b) => {
+          b.classList.remove('bg-[#A87343]', 'text-white', 'shadow-[0_8px_22px_rgba(168,115,67,0.18)]', 'active-category');
+          b.classList.add('text-[#292722]', 'hover:bg-[#A87343]/[0.07]', 'hover:text-[#8E5C35]');
+        });
+
+        // Set clicked button to active state
+        btn.classList.remove('text-[#292722]', 'hover:bg-[#A87343]/[0.07]', 'hover:text-[#8E5C35]');
+        btn.classList.add('bg-[#A87343]', 'text-white', 'shadow-[0_8px_22px_rgba(168,115,67,0.18)]', 'active-category');
+
+        // Filter dishes based on selected category
+        const selectedCategory = btn.getAttribute('data-category');
+        filterDishes(selectedCategory);
+      });
+    });
+
+    // Run initial filter based on default active button
+    const activeBtn = document.querySelector('.category-btn.active-category');
+    if (activeBtn) {
+      filterDishes(activeBtn.getAttribute('data-category'));
+    }
+  });
+</script>
+
+<style>
+  /* =========================================================
+     HORIZONTAL SCROLLBAR
+     ========================================================= */
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* =========================================================
+     DISH CARD TRANSITION
+     ========================================================= */
+
+  .dish-card {
+    transition: opacity 0.3s ease, transform 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  /* =========================================================
+     MOBILE CARD TUNING
+     ========================================================= */
+
+  @media (max-width: 639px) {
+    article {
+      border-radius: 15px;
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+</style>
+
+<!-- =========================================================
+     MENU — SMOOTH SCROLL + REVEAL ANIMATIONS
+     ========================================================= -->
+
+<style>
+  /* ---------------------------------------------------------
+     Smooth page scrolling
+     --------------------------------------------------------- */
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ---------------------------------------------------------
+     Reveal base state
+     --------------------------------------------------------- */
+
+  #menu .menu-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #menu .menu-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Slightly different movement for the chef area
+     --------------------------------------------------------- */
+
+  #menu .menu-reveal-chef {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    transition:
+      opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #menu .menu-reveal-chef.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ---------------------------------------------------------
+     Dish cards — softer and slightly staggered
+     --------------------------------------------------------- */
+
+  #menu .menu-reveal-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  #menu .menu-reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Category navigation
+     --------------------------------------------------------- */
+
+  #menu .menu-reveal-nav {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #menu .menu-reveal-nav.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Bottom CTA
+     --------------------------------------------------------- */
+
+  #menu .menu-reveal-cta {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #menu .menu-reveal-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Reduced motion
+     --------------------------------------------------------- */
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    #menu .menu-reveal,
+    #menu .menu-reveal-chef,
+    #menu .menu-reveal-card,
+    #menu .menu-reveal-nav,
+    #menu .menu-reveal-cta {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const initMenuAnimations = () => {
+      const menu = document.querySelector("#menu");
+
+      if (!menu) return;
+
+      /*
+       * Prevent duplicate initialization
+       */
+      if (menu.dataset.animationsInitialized === "true") return;
+
+      menu.dataset.animationsInitialized = "true";
+
+      /* -------------------------------------------------------
+         Identify existing elements
+         ------------------------------------------------------- */
+
+      const mainContainer = menu.querySelector(
+        ":scope > div.mx-auto"
+      );
+
+      if (!mainContainer) return;
+
+      const introArea = mainContainer.children[0];
+      const categoryNav = mainContainer.children[1];
+      const cardsWrapper = mainContainer.children[2];
+      const bottomCta = mainContainer.children[3];
+
+      /* -------------------------------------------------------
+         Intro / heading
+         ------------------------------------------------------- */
+
+      if (introArea) {
+        introArea.classList.add("menu-reveal");
+      }
+
+      /* -------------------------------------------------------
+         Chef image + quote get a slightly softer animation
+         ------------------------------------------------------- */
+
+      if (introArea) {
+        const chefArea = introArea.querySelector(
+          ".hidden.lg\\:block"
+        );
+
+        if (chefArea) {
+          chefArea.classList.remove("menu-reveal");
+          chefArea.classList.add("menu-reveal-chef");
+        }
+      }
+
+      /* -------------------------------------------------------
+         Category navigation
+         ------------------------------------------------------- */
+
+      if (categoryNav) {
+        categoryNav.classList.add("menu-reveal-nav");
+      }
+
+      /* -------------------------------------------------------
+         Dish cards
+         ------------------------------------------------------- */
+
+      if (cardsWrapper) {
+        const cards = cardsWrapper.querySelectorAll("article");
+
+        cards.forEach((card, index) => {
+          card.classList.add("menu-reveal-card");
+
+          /*
+           * Maximum stagger is kept small so the section
+           * doesn't feel slow.
+           */
+          card.style.setProperty(
+            "--reveal-delay",
+            `${index * 80}ms`
+          );
+        });
+      }
+
+      /* -------------------------------------------------------
+         Bottom CTA
+         ------------------------------------------------------- */
+
+      if (bottomCta) {
+        bottomCta.classList.add("menu-reveal-cta");
+      }
+
+      /* -------------------------------------------------------
+         Intersection Observer
+         ------------------------------------------------------- */
+
+      const animatedElements = menu.querySelectorAll(
+        ".menu-reveal, .menu-reveal-chef, .menu-reveal-nav, .menu-reveal-card, .menu-reveal-cta"
+      );
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (prefersReducedMotion) {
+        animatedElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, observerInstance) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-visible");
+
+            /*
+             * Animate only once.
+             */
+            observerInstance.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -60px 0px",
+        }
+      );
+
+      animatedElements.forEach((element) => {
+        observer.observe(element);
+      });
+    };
+
+    /*
+     * Astro can execute scripts after the DOM is available,
+     * but this also makes it safe when the component is
+     * dynamically inserted.
+     */
+    if (document.readyState === "loading") {
+      document.addEventListener(
+        "DOMContentLoaded",
+        initMenuAnimations,
+        { once: true }
+      );
+    } else {
+      initMenuAnimations();
+    }
+  })();
+</script>

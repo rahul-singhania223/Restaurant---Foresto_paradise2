@@ -1,0 +1,818 @@
+---
+import Navbar from "../Navbar.astro";
+
+/*
+ * Foresto Paradise — Hero Section
+ *
+ * Replace these placeholder image paths:
+ * /images/hero-restaurant.webp
+ * /images/hero-dish.png
+ * /images/hero-ambience.jpg
+ * /images/hero-chef.jpg
+ * /images/avatar-1.jpg ... avatar-5.jpg
+ */
+
+
+const avatars = [
+  "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8fHww",
+  "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww",
+  "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1583692331501-5339b76cbf1e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1732117940281-e1598445016c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
+];
+---
+
+<section
+  id="home"
+  class="hero relative isolate min-h-[760px] overflow-hidden bg-[#19140F] text-[#F4F0E7] lg:min-h-screen"
+>
+  <!-- =========================================================
+       BACKGROUND IMAGE
+       ========================================================= -->
+
+  <div class="absolute inset-0 -z-20">
+    <!-- IMAGE PLACEHOLDER -->
+    <img
+      src="/images/hero-restaurant.webp"
+      alt=""
+      class="hero-bg-image h-full w-full object-cover object-center"
+    />
+
+    <!-- Optional image treatment -->
+    <!--
+    <div class="absolute inset-0 bg-black/45"></div>
+    -->
+
+    <!-- Optional left readability -->
+    <!--
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-[#0d0b08]/90 via-[#0d0b08]/60 to-transparent"
+    ></div>
+    -->
+
+    <!-- Optional bottom fade -->
+    <!--
+    <div
+      class="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#19140F] via-[#19140F]/40 to-transparent"
+    ></div>
+    -->
+  </div>
+
+ <Navbar />
+
+  <!-- =========================================================
+       HERO CONTENT
+       ========================================================= -->
+
+  <div
+    data-hero-content
+    class="relative z-10 mx-auto flex min-h-[calc(100vh-110px)] max-w-[1460px] items-center px-6 pb-20 pt-16 sm:px-10 lg:px-14 lg:pb-28 lg:pt-10"
+  >
+    <div
+      data-hero-grid
+      class="grid w-full items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]"
+    >
+      <!-- =====================================================
+           LEFT CONTENT
+           ===================================================== -->
+
+      <div
+        data-hero-left
+        class="relative max-w-[650px]"
+      >
+        <!-- Eyebrow -->
+        <div class="mb-5 sm:mb-6">
+          <span
+            class="text-[10px] font-medium uppercase tracking-[0.30em] text-[#D8C8AD] sm:text-[11px]"
+          >
+            Fine Dining
+
+            <span class="mx-1.5 text-[#A87343]">•</span>
+
+            Great Company
+
+            <span class="mx-1.5 text-[#A87343]">•</span>
+
+            Memorable Moments
+          </span>
+        </div>
+
+        <!-- =================================================
+             MAIN HEADLINE
+             ================================================= -->
+
+        <h1
+          class="max-w-[650px] font-['Cormorant_Garamond'] text-[clamp(4.2rem,6.4vw,6rem)] font-medium leading-[0.82] tracking-[-0.035em]"
+        >
+          <!-- White -->
+          <span class="block text-[#FAF9F5]">
+            Good Food
+          </span>
+
+          <!-- Warm cream / bronze -->
+          <span
+            class="block bg-gradient-to-r from-[#FFF4DD] via-[#F0C98F] to-[#D99D5F] bg-clip-text text-transparent"
+          >
+            Brings People
+          </span>
+
+          <span
+            class="block bg-gradient-to-r from-[#F5D29D] via-[#E8B875] to-[#D08F50] bg-clip-text text-transparent"
+          >
+            Together
+          </span>
+        </h1>
+
+        <!-- =================================================
+             DESCRIPTION
+             ================================================= -->
+
+        <p
+          class="mt-5 max-w-[500px] text-[15px] leading-[1.65] text-white/75 sm:mt-6 sm:text-[17px]"
+        >
+          A place where delicious food, warm ambience and
+          unforgettable experiences come together.
+        </p>
+
+        <!-- =================================================
+             ACTIONS
+             ================================================= -->
+
+        <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+          <!-- PRIMARY -->
+          <a
+            href="/menu"
+            class="group relative inline-flex h-14 items-center gap-3 overflow-hidden rounded-full bg-[#E8B875] px-6 text-[14px] font-semibold text-[#171714] shadow-[0_0_0_1px_rgba(255,220,165,0.35),0_8px_25px_rgba(168,115,67,0.35),0_0_45px_rgba(232,184,117,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F0C98F] hover:shadow-[0_0_0_1px_rgba(255,225,180,0.55),0_10px_30px_rgba(168,115,67,0.45),0_0_55px_rgba(232,184,117,0.28)]"
+          >
+            <!-- Inner highlight -->
+            <span
+              class="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/30 via-transparent to-transparent opacity-70"
+            ></span>
+
+            <!-- Hover shimmer -->
+            <span
+              class="pointer-events-none absolute -left-1/2 top-0 h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-100"
+            ></span>
+
+            <!-- Cutlery -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="relative z-10 h-[18px] w-[18px]"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 3V21M5 3V9C5 10.7 6.3 12 8 12C9.7 12 11 10.7 11 9V3M16 3V21M13.5 3C16 3.8 18 6.2 18 9V21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span class="relative z-10">
+              Explore Our Menu
+            </span>
+
+            <!-- Arrow -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 12H19M13 6L19 12L13 18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <!-- SECONDARY -->
+          <a
+            href="#reservation"
+            class="group inline-flex h-14 items-center gap-3 rounded-full border border-white/30 bg-white/[0.04] px-6 text-[14px] font-medium text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#C99A69] hover:bg-[#A87343]/10 hover:text-[#E8C596]"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-[18px] w-[18px] transition-transform duration-300 group-hover:scale-105"
+              aria-hidden="true"
+            >
+              <rect
+                x="3"
+                y="5"
+                width="18"
+                height="16"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+
+              <path
+                d="M8 3V7M16 3V7M3 10H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <span>
+              Reserve a Table
+            </span>
+          </a>
+        </div>
+
+        <!-- =================================================
+             STATS
+             ================================================= -->
+
+        <div
+          class="mt-8 flex max-w-[540px] divide-x divide-white/20 border-t border-white/15 pt-6"
+        >
+          <!-- Rating -->
+          <div class="pr-7 sm:pr-10">
+            <p
+              class="font-['Cormorant_Garamond'] text-3xl font-medium leading-none sm:text-4xl"
+            >
+              4.8
+              <span class="text-[#E8B875]">★</span>
+            </p>
+
+            <p class="mt-2 text-[11px] text-white/55 sm:text-xs">
+              2K+ Reviews
+            </p>
+          </div>
+
+          <!-- Dishes -->
+          <div class="px-7 sm:px-10">
+            <p
+              class="font-['Cormorant_Garamond'] text-3xl font-medium leading-none sm:text-4xl"
+            >
+              50<span class="text-[#E8B875]">+</span>
+            </p>
+
+            <p class="mt-2 text-[11px] text-white/55 sm:text-xs">
+              Signature Dishes
+            </p>
+          </div>
+
+          <!-- Experience -->
+          <div class="pl-7 sm:pl-10">
+            <p
+              class="font-['Cormorant_Garamond'] text-3xl font-medium leading-none sm:text-4xl"
+            >
+              10<span class="text-[#E8B875]">+</span>
+            </p>
+
+            <p class="mt-2 text-[11px] text-white/55 sm:text-xs">
+              Years of Excellence
+            </p>
+          </div>
+        </div>
+
+        <!-- =================================================
+             SOCIAL PROOF
+             ================================================= -->
+
+        <div class="mt-6 flex items-center gap-4">
+          <div class="flex -space-x-3">
+            {
+              avatars.map((avatar, index) => (
+                <div
+                  class="h-9 w-9 overflow-hidden rounded-full border-2 border-[#19140F] bg-[#686863]"
+                  style={`z-index: ${avatars.length - index}`}
+                >
+                  <img
+                    src={avatar}
+                    alt=""
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              ))
+            }
+
+            <div
+              class="flex h-9 w-9 items-center justify-center rounded-full border border-[#C99A69]/60 bg-[#19140F] text-[10px] font-semibold text-[#E8C596]"
+            >
+              +2K
+            </div>
+          </div>
+
+          <p
+            class="max-w-[170px] text-[12px] leading-5 text-white/65"
+          >
+            Loved by food enthusiasts across Patna
+          </p>
+        </div>
+      </div>
+
+      <!-- =====================================================
+           RIGHT VISUAL
+           ===================================================== -->
+
+      <div
+        data-hero-right
+        class="relative hidden h-[620px] lg:block"
+      >
+        <!-- Main dish placeholder
+        Add your main dish image here when ready.
+        -->
+
+        <!-- =================================================
+             AMBIENCE CARD
+             ================================================= -->
+
+        <div
+          class="hero-card absolute right-[2%] top-[5%] z-20 flex w-[320px] rotate-[-3deg] items-center gap-4 rounded-[20px] border border-white/30 bg-[#19140F]/30 p-3 backdrop-blur-md transition-transform duration-500 hover:rotate-0"
+        >
+          <div
+            class="h-[105px] w-[105px] shrink-0 overflow-hidden rounded-[16px]"
+          >
+            <!-- IMAGE PLACEHOLDER -->
+            <img
+              src="https://images.unsplash.com/photo-1729394405518-eaf2a0203aa7?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="pr-2">
+            <h2
+              class="font-['Cormorant_Garamond'] text-[23px] font-medium leading-[0.95]"
+            >
+              Elegant
+              <br />
+              Ambience
+            </h2>
+
+            <p class="mt-2 text-[11px] leading-4 text-white/60">
+              Perfect for family dinners, dates and celebrations.
+            </p>
+
+            <span
+              class="mt-3 flex h-7 w-7 items-center justify-center rounded-full border border-[#C99A69]/70 text-[#C99A69]"
+            >
+              →
+            </span>
+          </div>
+        </div>
+
+        <!-- =================================================
+             CHEF CARD
+             ================================================= -->
+
+        <div
+          class="hero-card absolute right-[0%] top-[36%] z-20 flex w-[330px] rotate-[2deg] items-center gap-4 rounded-[20px] border border-white/30 bg-[#19140F]/25 p-3 backdrop-blur-md transition-transform duration-500 hover:rotate-0"
+        >
+          <div
+            class="h-[105px] w-[105px] shrink-0 overflow-hidden rounded-[16px]"
+          >
+            <!-- IMAGE PLACEHOLDER -->
+            <img
+              src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=677&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="pr-2">
+            <h2
+              class="font-['Cormorant_Garamond'] text-[23px] font-medium leading-[0.95]"
+            >
+              Curated
+              <br />
+              by Experts
+            </h2>
+
+            <p class="mt-2 text-[11px] leading-4 text-white/60">
+              Authentic flavours with a modern touch.
+            </p>
+
+            <span
+              class="mt-3 flex h-7 w-7 items-center justify-center rounded-full border border-[#C99A69]/70 text-[#C99A69]"
+            >
+              →
+            </span>
+          </div>
+        </div>
+
+        <!-- =================================================
+             TESTIMONIAL CARD
+             ================================================= -->
+
+        <div
+          class="hero-card absolute bottom-[8%] right-[2%] z-30 w-[275px] rounded-[20px] border border-white/30 bg-[#19140F]/25 p-5 backdrop-blur-md"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="h-10 w-10 overflow-hidden rounded-full border border-white/20"
+            >
+              <!-- IMAGE PLACEHOLDER -->
+              <img
+                src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8fHww"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div>
+              <p class="text-[12px] font-medium">
+                Amazing Experience!
+              </p>
+
+              <div class="mt-1 flex gap-0.5 text-[#E8C596]">
+                ★ ★ ★ ★ ★
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-[12px] leading-5 text-white/60">
+            “Food, ambience and service — everything was perfect!”
+          </p>
+        </div>
+
+        <!-- =================================================
+             SIGNATURE DISH LABEL
+             ================================================= -->
+
+        <div
+          class="absolute bottom-[26%] left-[2%] z-30 hidden xl:block"
+        >
+          <div class="relative">
+            <p
+              class="font-['Cormorant_Garamond'] text-[25px] italic leading-none text-[#F4F0E7]"
+            >
+              Signature
+              <br />
+              Dish
+            </p>
+
+            <svg
+              viewBox="0 0 120 80"
+              fill="none"
+              class="absolute left-[55px] top-[30px] w-[110px] text-[#E8C596]"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 18C40 2 82 12 100 38C106 47 108 57 108 69"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-dasharray="4 5"
+              />
+
+              <path
+                d="M99 62L108 70L113 59"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SCROLL INDICATOR
+       ========================================================= -->
+
+  <div
+    data-hero-scroll
+    class="absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 flex-col items-center lg:flex"
+  >
+    <div
+      class="flex h-10 w-6 items-start justify-center rounded-full border border-white/35 p-1.5"
+    >
+      <span
+        class="h-1.5 w-1 rounded-full bg-white/80 animate-[scrollDot_2s_ease-in-out_infinite]"
+      ></span>
+    </div>
+
+    <span
+      class="mt-3 text-[8px] font-medium uppercase tracking-[0.3em] text-white/50"
+    >
+      Scroll to explore
+    </span>
+
+    <span class="mt-3 h-10 w-px bg-white/20"></span>
+  </div>
+</section>
+
+<!-- =========================================================
+     ANIMATION + HERO STYLES
+     ========================================================= -->
+
+<style>
+  /* =========================================================
+     SCROLLING
+     ========================================================= */
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  /* =========================================================
+     HERO BASE
+     ========================================================= */
+
+  .hero {
+    background:
+      radial-gradient(
+        circle at 85% 20%,
+        rgba(115, 122, 74, 0.035),
+        transparent 30%
+      ),
+      #19140f;
+  }
+
+  /* =========================================================
+     BACKGROUND REVEAL
+     ========================================================= */
+
+  .hero-bg-image {
+    transform: scale(1.06);
+    opacity: 0.88;
+
+    transition:
+      transform 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 1.2s ease;
+  }
+
+  .hero.is-visible .hero-bg-image {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* =========================================================
+     INITIAL STATES
+     ========================================================= */
+
+  [data-hero-reveal],
+  [data-hero-left],
+  [data-hero-right],
+  [data-hero-scroll] {
+    opacity: 0;
+  }
+
+  [data-hero-reveal] {
+    transform: translateY(-18px);
+  }
+
+  [data-hero-left] {
+    transform: translateY(28px);
+  }
+
+  [data-hero-right] {
+    transform: translateY(28px) scale(0.985);
+  }
+
+  [data-hero-scroll] {
+    transform: translateY(10px);
+  }
+
+  /* =========================================================
+     NAVIGATION REVEAL
+     ========================================================= */
+
+  .hero.is-visible [data-hero-reveal] {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 700ms ease,
+      transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 100ms;
+  }
+
+  /* =========================================================
+     LEFT CONTENT
+     ========================================================= */
+
+  .hero.is-visible [data-hero-left] {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 800ms ease,
+      transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 220ms;
+  }
+
+  /* Individual content reveal */
+
+  [data-hero-left] > div,
+  [data-hero-left] > h1,
+  [data-hero-left] > p {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Eyebrow */
+
+  .hero.is-visible [data-hero-left] > div:first-child {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 600ms ease,
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 350ms;
+  }
+
+  /* Headline */
+
+  .hero.is-visible [data-hero-left] > h1 {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 800ms ease,
+      transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 450ms;
+  }
+
+  /* Description */
+
+  .hero.is-visible [data-hero-left] > p {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 650ms ease,
+      transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 600ms;
+  }
+
+  /* Buttons */
+
+  .hero.is-visible [data-hero-left] > div:nth-of-type(2) {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 650ms ease,
+      transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 720ms;
+  }
+
+  /* Stats */
+
+  .hero.is-visible [data-hero-left] > div:nth-of-type(3) {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 650ms ease,
+      transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 820ms;
+  }
+
+  /* =========================================================
+     RIGHT VISUAL
+     ========================================================= */
+
+  .hero.is-visible [data-hero-right] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+
+    transition:
+      opacity 1000ms ease,
+      transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 350ms;
+  }
+
+  /* Individual floating cards */
+
+  .hero-card {
+    opacity: 0;
+    transform-origin: center;
+  }
+
+  .hero.is-visible .hero-card:nth-child(1) {
+    opacity: 1;
+
+    transition:
+      opacity 700ms ease,
+      transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 700ms;
+  }
+
+  .hero.is-visible .hero-card:nth-child(2) {
+    opacity: 1;
+
+    transition:
+      opacity 700ms ease,
+      transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 820ms;
+  }
+
+  .hero.is-visible .hero-card:nth-child(3) {
+    opacity: 1;
+
+    transition:
+      opacity 700ms ease,
+      transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 940ms;
+  }
+
+  /* =========================================================
+     SCROLL INDICATOR
+     ========================================================= */
+
+  .hero.is-visible [data-hero-scroll] {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+      opacity 700ms ease,
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    transition-delay: 1200ms;
+  }
+
+  /* =========================================================
+     SCROLL DOT
+     ========================================================= */
+
+  @keyframes scrollDot {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+
+    50% {
+      transform: translateY(12px);
+      opacity: 1;
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+
+    .hero *,
+    .hero-bg-image,
+    [data-hero-reveal],
+    [data-hero-left],
+    [data-hero-right],
+    [data-hero-scroll],
+    .hero-card {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+  }
+</style>
+
+<!-- =========================================================
+     HERO ANIMATION SCRIPT
+     ========================================================= -->
+
+<script>
+  const hero = document.querySelector<HTMLElement>(".hero");
+
+  if (hero) {
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) {
+      hero.classList.add("is-visible");
+    } else {
+      /*
+       * Trigger the entrance after the browser has painted
+       * the initial state.
+       */
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          hero.classList.add("is-visible");
+        });
+      });
+    }
+  }
+</script>

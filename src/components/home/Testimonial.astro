@@ -1,0 +1,434 @@
+---
+const reviews = [
+  {
+    name: "Priya Sinha",
+    context: "Visited with Family",
+    text: "Amazing food, beautiful ambience and very warm staff. It's the perfect place for family dinners.",
+    avatar:
+      "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&auto=format&fit=crop&q=60",
+  },
+  {
+    name: "Amit Kumar",
+    context: "Corporate Dinner",
+    text: "The flavours are incredible and the service is top-notch. Foresto Paradise never disappoints!",
+    avatar:
+      "https://plus.unsplash.com/premium_photo-1690587673708-d6ba8a1579a5?w=600&auto=format&fit=crop&q=60",
+  },
+  {
+    name: "Neha Verma",
+    context: "Celebrated a Birthday",
+    text: "Such a beautiful place! Great food, relaxing ambience and perfect for special occasions.",
+    avatar:
+      "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=600&auto=format&fit=crop&q=60",
+  },
+];
+---
+
+<section
+  id="testimonial"
+  class="relative isolate overflow-hidden bg-[#FDFBF7] py-20 sm:py-24 lg:py-[120px]"
+>
+  <!-- Background -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <svg
+      viewBox="0 0 1400 800"
+      class="absolute -top-[10%] left-0 w-full text-[#F4EDE4] opacity-50"
+      fill="currentColor"
+      aria-hidden="true"
+      preserveAspectRatio="none"
+    >
+      <path d="M0,200 C300,400 600,0 1000,200 C1200,300 1400,100 1400,100 L1400,0 L0,0 Z" />
+    </svg>
+
+    <div class="absolute -left-[50px] top-[20%] z-20 h-[300px] w-[200px] opacity-70 blur-[8px]">
+      <img
+        src="/images/shared/foreground-leaves-blur.webp"
+        alt=""
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    <div class="absolute -bottom-[20px] -right-[20px] z-30 h-[250px] w-[250px] opacity-80 blur-[6px]">
+      <img
+        src="/images/shared/foreground-leaves-blur.webp"
+        alt=""
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    <div class="absolute right-0 top-0 h-full w-[15%] md:w-[25%] lg:w-[30%]">
+      <div class="relative h-full w-full overflow-hidden rounded-l-[500px] border-l-[8px] border-white shadow-2xl">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1670984939096-f3cfd48c7408?q=80&w=687&auto=format&fit=crop"
+          alt="Restaurant Interior"
+          class="h-full w-full object-cover opacity-90"
+        />
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
+    <!-- Header -->
+    <div class="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between lg:pr-[32%]">
+      <div class="max-w-2xl">
+        <div class="testimonial-reveal flex items-center gap-4" data-delay="0">
+          <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A87343]">
+            Guest Experiences
+          </span>
+          <span class="h-px w-16 bg-[#A87343]/60"></span>
+        </div>
+
+        <h2
+          class="testimonial-reveal mt-5 font-['Cormorant_Garamond'] text-[clamp(3.2rem,4.5vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#171714]"
+          data-delay="1"
+        >
+          Loved by <span class="italic text-[#A87343]">Our Guests</span>
+        </h2>
+
+        <p
+          class="testimonial-reveal mt-5 max-w-[500px] text-[15px] leading-[1.6] text-[#5A5752] sm:text-[17px]"
+          data-delay="2"
+        >
+          Heartfelt words from the people who make Foresto Paradise what it is —
+          a place for great food and unforgettable moments.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="testimonial-reveal mt-8 flex items-center gap-3 md:mt-0" data-delay="3">
+        <button
+          type="button"
+          id="testimonial-prev"
+          aria-label="Previous review"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-[#D7CCC0] text-[#7A756D] transition-all duration-300 hover:border-[#A87343] hover:text-[#A87343] disabled:cursor-not-allowed disabled:opacity-30"
+        >
+          <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+            <path
+              d="M19 12H5M11 18L5 12L11 6"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          id="testimonial-next"
+          aria-label="Next review"
+          class="flex h-11 w-11 items-center justify-center rounded-full bg-[#A87343] text-white shadow-md transition-all duration-300 hover:bg-[#8E5C35] disabled:cursor-not-allowed disabled:opacity-30"
+        >
+          <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+            <path
+              d="M5 12H19M13 18L19 12L13 6"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="relative z-10 mt-14">
+      <div
+        id="testimonial-carousel"
+        class="testimonial-reveal flex snap-x snap-mandatory gap-6 overflow-x-auto pb-8 scrollbar-none md:gap-8 lg:pr-[28%]"
+        data-delay="4"
+        role="region"
+        aria-label="Guest reviews"
+        tabindex="0"
+      >
+        {
+          reviews.map((review, index) => (
+            <article
+              class="testimonial-card group relative flex w-[320px] shrink-0 snap-start flex-col rounded-[24px] bg-white/80 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_15px_50px_rgba(0,0,0,0.08)] sm:w-[350px]"
+              data-index={index}
+            >
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5EFE6] text-[#A87343]">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                  <path d="M9.983 3v7.391C9.983 16.13 6.273 19.467 2 21L.93 18.232c2.812-1.077 4.67-3.084 5.303-5.232H2V3h7.983zm14.017 0v7.391c0 5.739-3.71 9.076-7.983 10.609L14.947 18.23c2.812-1.077 4.67-3.084 5.303-5.232h-4.233V3H24z" />
+                </svg>
+              </div>
+
+              <div class="mt-6 flex items-center gap-1 text-[#D4AF37]" aria-label="5 out of 5 stars">
+                {
+                  [1, 2, 3, 4, 5].map(() => (
+                    <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))
+                }
+              </div>
+
+              <p class="mt-4 min-h-[90px] text-[15px] leading-[1.65] text-[#4D4A45]">
+                {review.text}
+              </p>
+
+              <div class="mt-8 flex items-center gap-4 border-t border-[#F0EBE1] pt-6">
+                <img
+                  src={review.avatar}
+                  alt={review.name}
+                  loading="lazy"
+                  class="h-12 w-12 rounded-full object-cover shadow-sm transition-transform duration-700 group-hover:scale-105"
+                />
+                <div>
+                  <h3 class="font-serif text-[16px] font-bold text-[#171714]">
+                    {review.name}
+                  </h3>
+                  <p class="text-[12px] text-[#7A756D]">{review.context}</p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Dynamic indicators -->
+      <div
+        id="testimonial-indicators"
+        class="testimonial-reveal mt-4 flex items-center justify-center gap-2 lg:justify-start lg:pl-4"
+        data-delay="4"
+        aria-label="Choose a review"
+      ></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap");
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  #testimonial {
+    --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .testimonial-reveal {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition:
+      opacity 800ms var(--reveal-ease),
+      transform 800ms var(--reveal-ease);
+    transition-delay: calc(var(--delay, 0) * 80ms);
+    will-change: opacity, transform;
+  }
+
+  .testimonial-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  #testimonial [data-delay="0"] { --delay: 0; }
+  #testimonial [data-delay="1"] { --delay: 1; }
+  #testimonial [data-delay="2"] { --delay: 2; }
+  #testimonial [data-delay="3"] { --delay: 3; }
+  #testimonial [data-delay="4"] { --delay: 4; }
+
+  .testimonial-dot {
+    width: 24px;
+    height: 4px;
+    border-radius: 999px;
+    background: #e5ded5;
+    transition: all 300ms var(--reveal-ease);
+  }
+
+  .testimonial-dot:hover {
+    background: #cdbda9;
+  }
+
+  .testimonial-dot.is-active {
+    width: 32px;
+    background: #a87343;
+  }
+
+  .testimonial-dot:focus-visible,
+  #testimonial-prev:focus-visible,
+  #testimonial-next:focus-visible {
+    outline: 2px solid #a87343;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .testimonial-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .testimonial-dot,
+    .testimonial-card,
+    .testimonial-card img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const initTestimonials = () => {
+    const section = document.querySelector("#testimonial");
+    const carousel = document.querySelector("#testimonial-carousel");
+    const previousButton = document.querySelector("#testimonial-prev");
+    const nextButton = document.querySelector("#testimonial-next");
+    const indicatorWrapper = document.querySelector("#testimonial-indicators");
+
+    if (!section || !carousel || !previousButton || !nextButton || !indicatorWrapper) return;
+
+    const cards = Array.from(carousel.querySelectorAll(".testimonial-card"));
+    if (!cards.length) return;
+
+    let activeIndex = 0;
+    let scrollTimer;
+
+    const getMaxIndex = () => Math.max(cards.length - 1, 0);
+
+    const getScrollLeftForCard = (index) => {
+      const card = cards[Math.max(0, Math.min(index, getMaxIndex()))];
+      return card.offsetLeft - carousel.offsetLeft;
+    };
+
+    const dots = cards.map((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "testimonial-dot";
+      dot.setAttribute("aria-label", `Go to review ${index + 1}`);
+      dot.setAttribute("aria-current", index === 0 ? "true" : "false");
+
+      dot.addEventListener("click", () => {
+        scrollToIndex(index);
+      });
+
+      indicatorWrapper.appendChild(dot);
+      return dot;
+    });
+
+    const updateControls = () => {
+      const maxIndex = getMaxIndex();
+
+      previousButton.disabled = activeIndex <= 0;
+      nextButton.disabled = activeIndex >= maxIndex;
+
+      dots.forEach((dot, index) => {
+        const active = index === activeIndex;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-current", active ? "true" : "false");
+      });
+    };
+
+    const scrollToIndex = (index) => {
+      const nextIndex = Math.max(0, Math.min(index, getMaxIndex()));
+      activeIndex = nextIndex;
+
+      carousel.scrollTo({
+        left: getScrollLeftForCard(nextIndex),
+        behavior: "smooth",
+      });
+
+      updateControls();
+    };
+
+    const syncActiveCard = () => {
+      const target = carousel.scrollLeft + carousel.clientWidth * 0.18;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const distance = Math.abs(card.offsetLeft - carousel.offsetLeft - target);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      activeIndex = closestIndex;
+      updateControls();
+    };
+
+    previousButton.addEventListener("click", () => {
+      scrollToIndex(activeIndex - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      scrollToIndex(activeIndex + 1);
+    });
+
+    carousel.addEventListener(
+      "scroll",
+      () => {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(syncActiveCard, 60);
+      },
+      { passive: true },
+    );
+
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        scrollToIndex(activeIndex + 1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        scrollToIndex(activeIndex - 1);
+      }
+    });
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealElements = section.querySelectorAll(".testimonial-reveal");
+
+    if (reduceMotion) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -50px 0px",
+        },
+      );
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+    }
+
+    updateControls();
+
+    window.addEventListener("resize", () => {
+      syncActiveCard();
+      updateControls();
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTestimonials, { once: true });
+  } else {
+    initTestimonials();
+  }
+</script>

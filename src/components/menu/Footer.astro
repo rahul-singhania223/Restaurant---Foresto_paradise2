@@ -1,0 +1,170 @@
+---
+// Footer.astro — Astro + Tailwind v3/v4, no config changes.
+// Requires these fonts loaded once in your layout <head>:
+// <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+
+// TODO: replace placeholder hrefs with real routes / profile URLs
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "Our Story", href: "/about" },
+  { label: "Menu", href: "/menu" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reservations", href: "/reservations" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const menuLinks = ["Chef's Selection", "Starters", "Soups & Salads", "Tandoor", "Main Course", "Rice & Breads", "Desserts", "Beverages"].map(
+  (label) => ({ label, href: `/menu#${label.toLowerCase().replace(/[^a-z]+/g, "-").replace(/-$/, "")}` }),
+);
+
+const socials = [
+  { label: "Instagram", href: "#", icon: `<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/>` },
+  { label: "Facebook", href: "#", icon: `<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>` },
+  { label: "Google", href: "#", icon: null },
+  { label: "Google Maps", href: "#", icon: `<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>` },
+  { label: "YouTube", href: "#", icon: `<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>` },
+];
+
+const contact = [
+  { icon: `<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>`, text: "Boring Road, Patna, Bihar" },
+  { icon: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`, text: "+91 98765 43210", href: "tel:+919876543210" },
+  { icon: `<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>`, text: "hello@forestoparadise.in", href: "mailto:hello@forestoparadise.in" },
+  { icon: `<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>`, text: "11:30 AM – 11:00 PM", sub: "Open All Days" },
+];
+
+const legal = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Sitemap", href: "/sitemap" },
+];
+---
+
+<footer class="relative isolate overflow-hidden bg-[#110d09] font-['DM_Sans',sans-serif] text-[#B9B0A4]">
+  <!-- warm glow bottom + faint leaves -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-[radial-gradient(ellipse_at_80%_100%,rgba(120,80,40,0.35),transparent_70%)]" aria-hidden="true"></div>
+  <svg class="pointer-events-none absolute -left-6 bottom-10 -z-10 hidden h-56 w-40 text-[#8a7a5c] opacity-25 md:block" viewBox="0 0 120 200" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true">
+    <path d="M10 195C30 130 60 70 100 10"></path>
+    <path d="M40 120c-20-5-32-25-30-45 22 5 33 25 30 45z"></path>
+    <path d="M62 80c20-5 35-20 38-40-24 4-38 20-38 40z"></path>
+  </svg>
+  <svg class="pointer-events-none absolute -right-4 top-6 -z-10 hidden h-64 w-44 text-[#8a7a5c] opacity-25 md:block" viewBox="0 0 120 200" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true">
+    <path d="M110 195C90 130 60 70 20 10"></path>
+    <path d="M80 120c20-5 32-25 30-45-22 5-33 25-30 45z"></path>
+    <path d="M58 80c-20-5-35-20-38-40 24 4 38 20 38 40z"></path>
+  </svg>
+
+  <div class="mx-auto max-w-[96rem] px-5 sm:px-8 lg:px-[5.7%]">
+    <div data-reveal="line" class="h-px w-full bg-[#5a4526]"></div>
+
+    <div data-reveal="grid" class="grid gap-12 py-9 sm:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1.05fr_1.15fr] lg:gap-0 lg:py-8">
+      <!-- Brand -->
+      <div data-reveal="brand" class="flex flex-col items-center text-center lg:pr-8">
+        <svg class="h-7 w-7 text-[#C98B34]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 3c1.7 2.4 1.7 6 0 9.4C10.3 9 10.3 5.4 12 3z"></path>
+          <path d="M4 7.5c3.6 0 6.6 2.2 8 6.5-4.5 0-8-2.4-8-6.5z"></path>
+          <path d="M20 7.5c-3.6 0-6.6 2.2-8 6.5 4.5 0 8-2.4 8-6.5z"></path>
+          <path d="M6.5 17c3.3 1.2 7.7 1.2 11 0-1.5 2.3-3.7 3.5-5.5 3.5S8 19.300 6.500 17z"></path>
+        </svg>
+        <p class="mt-1 font-['Playfair_Display',serif] text-[1.65rem] font-medium leading-tight text-[#F6EBD8]">Foresto Paradise</p>
+        <p class="mt-2 text-[0.58rem] font-medium uppercase tracking-[0.32em] text-[#C98B34]">Restaurant &amp; Lounge</p>
+        <p class="mt-4 max-w-[20rem] text-[0.88rem] leading-6 text-[#B9B0A4]">A place where great food, warm hospitality and memorable moments come together.</p>
+
+        <ul class="mt-5 flex flex-wrap justify-center gap-2.5">
+          {
+            socials.map((s) => (
+              <li>
+                <a
+                  href={s.href}
+                  aria-label={s.label}
+                  class="flex h-10 w-10 items-center justify-center rounded-full border border-[#8a6a35] text-[#F1D9A8] transition hover:border-[#C98B34] hover:bg-[#C98B34]/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C98B34]"
+                >
+                  {s.icon ? (
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={s.icon} />
+                  ) : (
+                    <span class="text-base font-semibold leading-none" aria-hidden="true">G</span>
+                  )}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Quick links -->
+      <nav data-reveal="column" style="--reveal-delay:100ms" aria-label="Quick links" class="lg:border-l lg:border-[#3a2d1c] lg:pl-10">
+        <h3 class="font-['Playfair_Display',serif] text-[1.25rem] font-medium text-[#F1D9A8]">Quick Links</h3>
+        <ul class="mt-3 space-y-2.5">
+          {quickLinks.map((l) => (
+            <li><a href={l.href} class="text-[0.88rem] transition hover:text-[#F1D9A8]">{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Our menu -->
+      <nav data-reveal="column" style="--reveal-delay:180ms" aria-label="Menu categories" class="lg:border-l lg:border-[#3a2d1c] lg:pl-10">
+        <h3 class="font-['Playfair_Display',serif] text-[1.25rem] font-medium text-[#F1D9A8]">Our Menu</h3>
+        <ul class="mt-3 space-y-2">
+          {menuLinks.map((l) => (
+            <li><a href={l.href} class="text-[0.88rem] transition hover:text-[#F1D9A8]">{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <address data-reveal="column" style="--reveal-delay:260ms" class="not-italic lg:border-l lg:border-[#3a2d1c] lg:pl-10">
+        <h3 class="font-['Playfair_Display',serif] text-[1.25rem] font-medium text-[#F1D9A8]">Contact Us</h3>
+        <ul class="mt-4 space-y-3.5">
+          {
+            contact.map((c) => (
+              <li class="flex items-start gap-3.5">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-[#F1D9A8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={c.icon} />
+                <div>
+                  {c.href ? (
+                    <a href={c.href} class="text-[0.88rem] text-[#F6EBD8] transition hover:text-[#F1D9A8]">{c.text}</a>
+                  ) : (
+                    <p class:list={["text-[0.88rem]", c.sub ? "text-[#F6EBD8]" : "text-[#D8CFC2]"]}>{c.text}</p>
+                  )}
+                  {c.sub && <p class="mt-0.5 text-[0.78rem] text-[#9d9488]">{c.sub}</p>}
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </address>
+    </div>
+
+    <div data-reveal="line" class="h-px w-full bg-[#3a2d1c]"></div>
+
+    <div data-reveal="bottom" class="flex flex-col items-center gap-3 py-5 text-center text-[0.78rem] md:flex-row md:justify-between md:text-left">
+      <p>© {new Date().getFullYear()} <span class="text-[#F6EBD8]">Foresto Paradise.</span> All rights reserved.</p>
+      <ul class="flex items-center">
+        {
+          legal.map((l, i) => (
+            <li class:list={[i > 0 && "ml-5 border-l border-[#4a3a25] pl-5"]}>
+              <a href={l.href} class="transition hover:text-[#F1D9A8]">{l.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="flex items-center gap-2">
+        Made with
+        <svg class="h-4 w-4 text-[#e03a3e]" viewBox="0 0 24 24" fill="currentColor" aria-label="love"><path d="M12 21s-7.5-4.6-9.6-9.2C.8 8.300 3 4.500 6.600 4.500c2 0 3.700 1 5.400 3 1.700-2 3.400-3 5.400-3 3.600 0 5.800 3.800 4.200 7.300C19.500 16.400 12 21 12 21z"></path></svg>
+        in India
+      </p>
+    </div>
+  </div>
+
+  <style>
+    [data-reveal]{opacity:0;transform:translate3d(0,18px,0);will-change:opacity,transform;transition:opacity 750ms cubic-bezier(.22,1,.36,1),transform 800ms cubic-bezier(.22,1,.36,1)}
+    [data-reveal="line"]{transform:scaleX(.92);transform-origin:center}
+    [data-reveal="column"]{transition-delay:var(--reveal-delay,0ms)}
+    [data-reveal="bottom"]{transform:translate3d(0,12px,0)}
+    [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0) scaleX(1)}
+    @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+  </style>
+  <script>
+    const footerRevealItems=document.querySelectorAll("[data-reveal]");
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){footerRevealItems.forEach(i=>i.classList.add("is-visible"));}
+    else{const o=new IntersectionObserver((entries,observer)=>{entries.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("is-visible");observer.unobserve(e.target);});},{threshold:.08,rootMargin:"0px 0px -6% 0px"});footerRevealItems.forEach(i=>o.observe(i));}
+  </script>
+</footer>

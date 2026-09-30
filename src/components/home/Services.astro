@@ -1,0 +1,529 @@
+---
+/*
+ * Foresto Paradise — Services Section
+ *
+ * IMAGE PLACEHOLDERS:
+ * Replace the `src` values with your actual images.
+ * 1. /images/services/arch-interior.webp
+ * 2. /images/services/dine-in.webp
+ * 3. /images/services/private-events.webp
+ * 4. /images/services/chefs-specials.webp
+ * 5. /images/services/catering.webp
+ * 6. /images/shared/foreground-leaves-blur.webp
+ */
+
+const services = [
+  {
+    title: "Dine In",
+    description: "Enjoy a memorable dining experience with authentic flavours and warm hospitality.",
+    image: "https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGluZSUyMGlufGVufDB8fDB8fHww",
+    icon: "dine-in"
+  },
+  {
+    title: "Private Events",
+    description: "Host birthdays, anniversaries or corporate gatherings in our elegant spaces.",
+    image: "https://plus.unsplash.com/premium_photo-1683121126477-17ef068309bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJpdmF0ZSUyMGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    icon: "events"
+  },
+  {
+    title: "Chef's Specials",
+    description: "Discover signature dishes crafted with the finest ingredients and seasonal flavours.",
+    image: "https://images.unsplash.com/photo-1681270543584-8e541a1bb056?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hlZiUyMHNwZWNpYWxzfGVufDB8fDB8fHww",
+    icon: "chef"
+  },
+  {
+    title: "Catering Services",
+    description: "Exceptional food and service for your special occasions, at your preferred location.",
+    image: "https://plus.unsplash.com/premium_photo-1686239357900-febfb958f33c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2F0ZXJpbmd8ZW58MHx8MHx8fDA%3D",
+    icon: "catering"
+  }
+];
+---
+
+<section id="services" class="relative overflow-hidden bg-[#FDFBF7] py-20 sm:py-24 lg:py-[120px]">
+  
+  <!-- ==========================================
+       BACKGROUND DECORATIONS
+       ========================================== -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- Large soft shape behind the arch image -->
+    <div class="absolute -right-[10%] -top-[10%] h-[800px] w-[800px] rounded-full bg-[#F4EDE4] opacity-70 blur-3xl"></div>
+    
+    <!-- Top-left subtle glow -->
+    <div class="absolute -left-[5%] top-[5%] h-[400px] w-[400px] rounded-full bg-[#F4EDE4] opacity-50 blur-[100px]"></div>
+
+    <!-- Foreground blurred leaves (Bottom Right) -->
+    <div class="absolute -bottom-[50px] -right-[50px] z-20 h-[350px] w-[350px] opacity-80 blur-[6px]">
+      <img src="/images/shared/foreground-leaves-blur.webp" alt="" class="h-full w-full object-cover" />
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
+    
+    <!-- ==========================================
+         HEADER AREA
+         ========================================== -->
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
+      
+      <!-- Left: Text Content -->
+      <div class="relative z-10 max-w-2xl">
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A87343]">
+            Our Services
+          </span>
+          <span class="h-px w-16 bg-[#A87343]/60"></span>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="mt-6 font-['Cormorant_Garamond'] text-[clamp(3rem,4.5vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#171714]">
+          Thoughtfully Crafted <br />
+          <span class="text-[#8E5C35]">For Every Occasion</span>
+        </h2>
+
+        <!-- Description -->
+        <p class="mt-6 max-w-[480px] text-[15px] leading-[1.6] text-[#5A5752] sm:text-[17px]">
+          From intimate dinners to grand celebrations, Foresto Paradise offers a range of experiences tailored to your needs.
+        </p>
+      </div>
+
+      <!-- Right: Arch Image & Handwritten Note -->
+      <div class="relative z-10 flex justify-end lg:pr-10">
+        <div class="relative w-full max-w-[420px]">
+          
+          <!-- Arch Image Wrapper -->
+          <!-- Using standard border-radius for an arch: rounded top, slightly rounded bottom -->
+          <div class="relative aspect-[4/5] w-full overflow-hidden rounded-t-[1000px] rounded-b-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+            <img src="https://plus.unsplash.com/premium_photo-1670984939096-f3cfd48c7408?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXJjaCUyMGludGVyaW9yJTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D" alt="Elegant restaurant interior" class="h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-black/5"></div>
+          </div>
+
+          <!-- Glassmorphic Handwritten Note Overlay -->
+          <!-- Positioned to overlap the left edge of the arch -->
+          <div class="absolute -left-6 top-[25%] z-20 w-[240px] -rotate-2 rounded-2xl border border-white/60 bg-white/60 p-5 shadow-[0_15px_35px_rgba(0,0,0,0.06)] backdrop-blur-md sm:-left-12 sm:w-[260px] sm:p-6">
+            <p class="font-['Caveat',cursive,serif] text-[26px] leading-[1.1] text-[#5C4F44]">
+              Great food, <br/>
+              memorable moments, <br/>
+              always.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SERVICES CARDS GRID
+         ========================================== -->
+    <div class="relative z-10 mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4">
+      {services.map((service) => (
+        <div class="group flex flex-col rounded-[24px] bg-white p-3 pb-7 shadow-[0_8px_30px_rgba(23,23,20,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(23,23,20,0.08)]">
+          
+          <!-- Image Container -->
+          <div class="relative h-[220px] w-full shrink-0 overflow-hidden rounded-[18px] bg-[#F5EFE6]">
+            <img 
+              src={service.image} 
+              alt={service.title} 
+              class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+            />
+            
+            <!-- Icon floating on bottom-left edge of the image -->
+            <div class="absolute -bottom-1 left-4 flex h-[48px] w-[48px] items-center justify-center rounded-full border-[3px] border-white bg-[#FDFBF7] text-[#A87343] shadow-sm">
+              
+              {service.icon === 'dine-in' && (
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                  <path d="M11 4V16M11 16H8M11 16H14M8 16V20M14 16V20M5 4C5 7.31371 7.68629 10 11 10M17 4C17 7.31371 14.3137 10 11 10M11 10V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              )}
+
+              {service.icon === 'events' && (
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                  <path d="M17 20C17 18.3431 14.7614 17 12 17C9.23858 17 7 18.3431 7 20M12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13ZM21 19C21 17.8954 19.8807 17 18.5 17C17.1193 17 16 17.8954 16 19M19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14ZM5 19C5 17.8954 3.88071 17 2.5 17C1.11929 17 0 17.8954 0 19M5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              )}
+
+              {service.icon === 'chef' && (
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                  <path d="M7 18V11.5C5.3 11.1 4 9.6 4 7.8C4 5.7 5.7 4 7.8 4C8.5 4 9.2 4.2 9.8 4.6C10.5 3.2 11.8 2.3 13.4 2.3C15.5 2.3 17.2 4 17.2 6.1C17.2 6.5 17.1 6.9 17 7.2C18.7 7.5 20 9 20 10.8C20 12.8 18.4 14.3 16.5 14.5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M7 18H17M8 18V21H16V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              )}
+
+              {service.icon === 'catering' && (
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                  <path d="M4 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M6 17C6 11.5 9 8 12 8C15 8 18 11.5 18 17" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                  <path d="M10 6C10 4.9 10.9 4 12 4C13.1 4 14 4.9 14 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M3 19H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              )}
+            </div>
+          </div>
+
+          <!-- Text Content -->
+          <div class="mt-7 flex h-full flex-col px-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-['Cormorant_Garamond'] text-[22px] font-bold tracking-tight text-[#171714]">
+                {service.title}
+              </h3>
+              
+              <!-- Subtle Arrow Button -->
+              <button 
+                type="button" 
+                aria-label={`Explore ${service.title}`}
+                class="flex h-7 w-7 items-center justify-center rounded-full border border-[#E5DED5] text-[#9A958D] transition-colors group-hover:border-[#A87343] group-hover:bg-[#A87343] group-hover:text-white"
+              >
+                <svg viewBox="0 0 20 20" fill="none" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="M4.16666 10H15.8333M10 4.16667L15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            
+            <p class="mt-2 text-[13px] leading-relaxed text-[#7A756D]">
+              {service.description}
+            </p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Ensure elegant fonts are loaded. */
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+</style>
+
+<style>
+  /* ---------------------------------------------------------
+     Smooth scrolling
+     --------------------------------------------------------- */
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ---------------------------------------------------------
+     Main section reveal
+     --------------------------------------------------------- */
+
+ #services .menu-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+ #services .menu-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Softer image / chef visual reveal
+     --------------------------------------------------------- */
+
+ #services .menu-reveal-image {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+    transition:
+      opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+ #services .menu-reveal-image.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ---------------------------------------------------------
+     Category navigation
+     --------------------------------------------------------- */
+
+ #services .menu-reveal-nav {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+ #services .menu-reveal-nav.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Dish cards
+     --------------------------------------------------------- */
+
+ #services .dish-card.menu-reveal-card {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 500ms ease;
+    transition-delay: var(--menu-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+ #services .dish-card.menu-reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Bottom CTA
+     --------------------------------------------------------- */
+
+ #services .menu-reveal-cta {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+ #services .menu-reveal-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Subtle image hover
+     --------------------------------------------------------- */
+
+ #services .dish-card img {
+    transition:
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+ #services .dish-card:hover img {
+    transform: scale(1.025);
+  }
+
+  /* ---------------------------------------------------------
+     Reduced motion
+     --------------------------------------------------------- */
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+   #services .menu-reveal,
+   #services .menu-reveal-image,
+   #services .menu-reveal-nav,
+   #services .dish-card.menu-reveal-card,
+   #services .menu-reveal-cta {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+   #services .dish-card img {
+      transition: none;
+    }
+  }
+</style>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  #services {
+    --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #services .reveal,
+  #services .reveal-soft,
+  #services .reveal-scale {
+    opacity: 0;
+    will-change: opacity, transform;
+  }
+
+  #services .reveal {
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity 800ms var(--reveal-ease),
+      transform 800ms var(--reveal-ease);
+  }
+
+  #services .reveal-soft {
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 900ms var(--reveal-ease),
+      transform 900ms var(--reveal-ease);
+  }
+
+  #services .reveal-scale {
+    transform: translate3d(0, 18px, 0) scale(0.985);
+    transition:
+      opacity 1000ms var(--reveal-ease),
+      transform 1000ms var(--reveal-ease);
+  }
+
+  #services .reveal.is-visible,
+  #services .reveal-soft.is-visible,
+  #services .reveal-scale.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  #services [data-reveal-delay="1"] { transition-delay: 80ms; }
+  #services [data-reveal-delay="2"] { transition-delay: 160ms; }
+  #services [data-reveal-delay="3"] { transition-delay: 240ms; }
+  #services [data-reveal-delay="4"] { transition-delay: 320ms; }
+
+  #services img {
+    transition: transform 1200ms var(--reveal-ease);
+  }
+
+  #services .about-image:hover img {
+    transform: scale(1.02);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    #services .reveal,
+    #services .reveal-soft,
+    #services .reveal-scale {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    #services img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const initAboutReveal = () => {
+      const section = document.querySelector("#services");
+      if (!section || section.dataset.revealInitialized === "true") return;
+
+      section.dataset.revealInitialized = "true";
+
+      const grid = section.querySelector(":scope > div.mx-auto > div");
+      if (!grid) return;
+
+      const left = grid.children[0];
+      const right = grid.children[1];
+
+      /*
+       * Left side:
+       * eyebrow → heading → description → features → CTA
+       */
+      if (left) {
+        const eyebrow = left.children[0];
+        const heading = left.querySelector("h2");
+        const description = left.querySelector("p");
+        const features = left.querySelector(":scope > div.mt-12");
+        const cta = left.querySelector(":scope > div.mt-12:last-child");
+
+        [eyebrow, heading, description].forEach((el) => {
+          if (el) el.classList.add("reveal");
+        });
+
+        if (features) {
+          [...features.children].forEach((feature, index) => {
+            feature.classList.add("reveal-soft");
+            if (index > 0) {
+              feature.dataset.revealDelay = String(Math.min(index, 4));
+            }
+          });
+        }
+
+        if (cta) {
+          cta.classList.add("reveal");
+          cta.dataset.revealDelay = "2";
+        }
+      }
+
+      /*
+       * Right side:
+       * main visual + quote card + floating images + social proof + annotation
+       */
+      if (right) {
+        const visual = right.querySelector(":scope > div.relative");
+
+        if (visual) {
+          visual.classList.add("reveal-scale", "about-image");
+
+          const quote = visual.querySelector(":scope > div.absolute.-right-4");
+          const floatingImages = visual.querySelector(
+            ":scope > div.absolute.bottom-\\[25\\%\\]"
+          );
+          const socialProof = visual.querySelector(
+            ":scope > div.absolute.-bottom-8"
+          );
+          const annotation = visual.querySelector(
+            ":scope > div.absolute.-bottom-\\[70px\\]"
+          );
+
+          [quote, floatingImages, socialProof, annotation].forEach((el, index) => {
+            if (!el) return;
+            el.classList.add("reveal-soft");
+            el.dataset.revealDelay = String(Math.min(index + 1, 4));
+          });
+        }
+      }
+
+      const elements = section.querySelectorAll(
+        ".reveal, .reveal-soft, .reveal-scale"
+      );
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (reduceMotion) {
+        elements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, observerInstance) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-visible");
+            observerInstance.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -60px 0px",
+        }
+      );
+
+      elements.forEach((element) => observer.observe(element));
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAboutReveal, {
+        once: true,
+      });
+    } else {
+      initAboutReveal();
+    }
+  })();
+</script>

@@ -1,0 +1,382 @@
+---
+/*
+ * Foresto Paradise — Our Outlets / Locations Section
+ */
+
+const outlets = [
+  {
+    id: "koregaon-park",
+    name: "Koregaon Park",
+    city: "Pune",
+    thumbnail: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    badge: "MAIN OUTLET",
+    address: "Lane 7, Koregaon Park, Pune, Maharashtra 411001",
+    hours: "11:00 AM - 11:30 PM",
+    days: "Everyday",
+    phone: "+91 91234 56789",
+    distance: "2.4 km away",
+    active: true,
+  },
+  {
+    id: "viman-nagar",
+    name: "Phoenix Mall",
+    city: "Viman Nagar, Pune",
+    thumbnail: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=400&q=80",
+    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80",
+    badge: "PREMIUM OUTLET",
+    address: "Phoenix Marketcity, Viman Nagar, Pune, Maharashtra 411014",
+    hours: "11:00 AM - 11:00 PM",
+    days: "Everyday",
+    phone: "+91 91234 56790",
+    distance: "6.1 km away",
+    active: false,
+  },
+  {
+    id: "balewadi",
+    name: "Foresto Bistro",
+    city: "Balewadi, Pune",
+    thumbnail: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80",
+    badge: "BISTRO & CAFE",
+    address: "Balewadi High Street, Baner, Pune, Maharashtra 411045",
+    hours: "09:00 AM - 11:00 PM",
+    days: "Everyday",
+    phone: "+91 91234 56791",
+    distance: "12.5 km away",
+    active: false,
+  },
+  {
+    id: "mumbai",
+    name: "Mumbai",
+    city: "Bandra West",
+    thumbnail: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=400&q=80",
+    image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1200&q=80",
+    badge: "NEW LOCATION",
+    address: "Linking Road, Bandra West, Mumbai, Maharashtra 400050",
+    hours: "12:00 PM - 12:00 AM",
+    days: "Everyday",
+    phone: "+91 91234 56792",
+    distance: "145 km away",
+    active: false,
+  },
+];
+---
+
+<section id="locations" class="relative isolate overflow-hidden bg-[#FDFBF7] py-20 sm:py-24 lg:py-[120px]">
+  
+  <!-- ==========================================
+       BACKGROUND ELEMENTS
+       ========================================== -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- Top Right Leaves -->
+    <svg viewBox="0 0 200 200" class="absolute -right-10 -top-10 h-80 w-80 text-[#D7CCC0] opacity-40" fill="currentColor" aria-hidden="true">
+      <path d="M100 0C100 55.23 55.23 100 0 100C55.23 100 144.77 100 200C100 144.77 144.77 100 200 100C144.77 100 100 55.23 100 0Z" />
+      <path d="M50 20C50 40 30 50 10 50C30 50 50 70 50 90C50 70 70 50 90 50C70 50 50 40 50 20Z" opacity="0.5"/>
+    </svg>
+    
+    <!-- Handwriting Overlay -->
+    <div class="absolute right-[15%] top-[10%] hidden lg:block text-right -rotate-12 opacity-60">
+      <p class="font-['Caveat',cursive,serif] text-[32px] leading-[1.1] text-[#A87343]">
+        Great Food, <br/>
+        Brighter Moments
+      </p>
+      <!-- Scribble line -->
+      <svg width="150" height="20" viewBox="0 0 150 20" fill="none" class="mt-2 inline-block text-[#A87343]/50">
+        <path d="M2 10 Q 40 2 80 12 T 148 8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
+    
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+    <div class="relative z-10 max-w-2xl reveal-on-scroll">
+      <!-- Eyebrow -->
+      <div class="flex items-center gap-4">
+        <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A87343]">
+          Our Outlets
+        </span>
+        <span class="h-px w-16 bg-[#A87343]/60"></span>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="mt-6 font-['Cormorant_Garamond'] text-[clamp(2.8rem,4vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#171714]">
+        Experience Foresto <br />
+        <span class="text-[#A87343]">Across Our Locations</span>
+      </h2>
+
+      <!-- Description -->
+      <p class="mt-5 max-w-[480px] text-[15px] leading-[1.6] text-[#5A5752] sm:text-[17px]">
+        Each outlet offers the same great food, warm hospitality and a unique ambience.
+      </p>
+    </div>
+
+    <!-- ==========================================
+         INTERACTIVE OUTLETS UI
+         ========================================== -->
+    <div class="relative z-10 mt-12 grid gap-6 lg:grid-cols-[380px_1fr] xl:gap-8">
+      
+      <!-- LEFT COLUMN: Outlet Selector -->
+      <div class="reveal-on-scroll delay-100 flex flex-col rounded-[24px] bg-[#F8F5F0] p-4 sm:p-5 h-fit shadow-sm">
+        <div class="flex flex-col gap-2">
+          {outlets.map((outlet) => (
+            <button
+              type="button"
+              data-outlet-target={outlet.id}
+              class={`outlet-btn group flex w-full items-center justify-between rounded-[16px] p-3 transition-all duration-300 hover:bg-white hover:shadow-sm ${
+                outlet.active ? 'bg-white shadow-sm ring-1 ring-[#EAE4DC]' : 'bg-transparent'
+              }`}
+            >
+              <div class="flex items-center gap-4">
+                <!-- Thumbnail -->
+                <div class="h-[60px] w-[80px] shrink-0 overflow-hidden rounded-[10px] bg-[#EAE4DC]">
+                  <img 
+                    src={outlet.thumbnail} 
+                    alt={outlet.name} 
+                    loading="lazy"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <!-- Text -->
+                <div class="text-left">
+                  <h4 class="font-serif text-[17px] font-semibold text-[#171714]">{outlet.name}</h4>
+                  <div class="mt-1 flex items-center gap-1.5 text-[12px] text-[#7A756D]">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-3 w-3 text-[#A87343]" aria-hidden="true">
+                      <path d="M12 11.2002C13.9882 11.2002 15.6 9.58841 15.6 7.6002C15.6 5.61198 13.9882 4.0002 12 4.0002C10.0118 4.0002 8.4 5.61198 8.4 7.6002C8.4 9.58841 10.0118 11.2002 12 11.2002Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18.5901 20.0001C18.5901 16.9201 15.6401 14.4102 12.0001 14.4102C8.36006 14.4102 5.41006 16.9201 5.41006 20.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    {outlet.city}
+                  </div>
+                </div>
+              </div>
+              <!-- Arrow -->
+              <svg viewBox="0 0 24 24" fill="none" class="mr-2 h-4 w-4 text-[#9A958D] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          ))}
+        </div>
+
+        <!-- View All Link -->
+        <a href="#all-outlets" class="mt-6 flex items-center justify-center gap-2 border-t border-[#EAE4DC] pt-5 text-[13px] font-medium text-[#A87343] transition-colors hover:text-[#8E5C35]">
+          <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+            <path d="M9 20L3 17V4L9 7M9 20L15 17M9 20V7M15 17L21 20V7L15 4M15 17V4M9 7L15 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          View All Outlets
+        </a>
+      </div>
+
+      <!-- RIGHT COLUMN: Dynamic Content Display -->
+      <div class="reveal-on-scroll delay-200 relative overflow-hidden rounded-[24px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.06)] ring-1 ring-[#EAE4DC]">
+        
+        {outlets.map((outlet) => (
+          <div 
+            id={`outlet-content-${outlet.id}`}
+            class={`outlet-content absolute inset-0 flex flex-col transition-all duration-500 ease-in-out ${
+              outlet.active ? 'opacity-100 visible z-10 translate-y-0' : 'opacity-0 invisible z-0 translate-y-4'
+            }`}
+          >
+            <!-- Large Image -->
+            <div class="relative h-[250px] w-full shrink-0 overflow-hidden sm:h-[300px] lg:h-[340px]">
+              <img 
+                src={outlet.image} 
+                alt={`${outlet.name} exterior`}
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="flex h-full flex-col justify-between p-6 sm:p-8">
+              
+              <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <!-- Title & Address -->
+                <div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#A87343]">
+                      {outlet.badge}
+                    </span>
+                    <span class="h-px w-8 bg-[#A87343]/40"></span>
+                  </div>
+                  <h3 class="mt-2 font-serif text-[32px] font-semibold text-[#171714]">
+                    {outlet.name}
+                  </h3>
+                  <div class="mt-2 flex items-start gap-2 text-[14px] text-[#5A5752]">
+                    <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-4 w-4 shrink-0 text-[#A87343]" aria-hidden="true">
+                      <path d="M12 11.2002C13.9882 11.2002 15.6 9.58841 15.6 7.6002C15.6 5.61198 13.9882 4.0002 12 4.0002C10.0118 4.0002 8.4 5.61198 8.4 7.6002C8.4 9.58841 10.0118 11.2002 12 11.2002Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18.5901 20.0001C18.5901 16.9201 15.6401 14.4102 12.0001 14.4102C8.36006 14.4102 5.41006 16.9201 5.41006 20.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>{outlet.address}</span>
+                  </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex shrink-0 flex-col gap-3 md:w-[200px]">
+                  <a href="#" class="group flex items-center justify-between rounded-xl bg-gradient-to-r from-[#A87343] to-[#8E5C35] px-5 py-3.5 text-[14px] font-medium text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg">
+                    <div class="flex items-center gap-2">
+                      <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Get Directions
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+                      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                  <a href="#reserve" class="flex items-center justify-center gap-2 rounded-xl border border-[#D7CCC0] bg-white px-5 py-3.5 text-[14px] font-medium text-[#171714] transition-all hover:border-[#A87343] hover:text-[#A87343]">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                      <path d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Reserve a Table
+                  </a>
+                </div>
+              </div>
+
+              <!-- Quick Info Grid -->
+              <div class="mt-8 grid grid-cols-2 gap-4 border-t border-[#F0EBE1] pt-6 sm:grid-cols-3">
+                <!-- Hours -->
+                <div class="flex items-start gap-3">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F8F5F0] text-[#A87343]">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5" aria-hidden="true">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-[#9A958D]">Opening Hours</p>
+                    <p class="mt-0.5 text-[13px] text-[#171714]">{outlet.hours}</p>
+                    <p class="text-[12px] text-[#7A756D]">{outlet.days}</p>
+                  </div>
+                </div>
+
+                <!-- Call Us -->
+                <div class="flex items-start gap-3">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F8F5F0] text-[#A87343]">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5" aria-hidden="true">
+                      <path d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-[#9A958D]">Call Us</p>
+                    <p class="mt-0.5 text-[13px] text-[#171714]">{outlet.phone}</p>
+                  </div>
+                </div>
+
+                <!-- Distance -->
+                <div class="flex items-start gap-3">
+                  <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F8F5F0] text-[#A87343]">
+                    <svg viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5" aria-hidden="true">
+                      <path d="M19 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H19C20.1046 7 21 7.89543 21 9V15C21 16.1046 20.1046 17 19 17Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M7 17V21M17 17V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3 11H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-[#9A958D]">Distance</p>
+                    <p class="mt-0.5 text-[13px] text-[#171714]">{outlet.distance}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        ))}
+        
+        <!-- Invisible spacer block to ensure the absolute container maintains minimum height dynamically -->
+        <div class="invisible relative p-6 sm:p-8 h-[250px] sm:h-[300px] lg:h-[340px]"></div>
+        <div class="invisible relative p-6 sm:p-8 mt-20">
+            <h3 class="font-serif text-[32px]">Spacer for height</h3>
+            <div class="mt-8 grid grid-cols-2 gap-4 border-t pt-6 sm:grid-cols-3">
+                <div class="h-10"></div>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Reveal Animations Logic
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    // 2. Outlets Tab Switching Logic
+    const buttons = document.querySelectorAll('.outlet-btn');
+    const contents = document.querySelectorAll('.outlet-content');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-outlet-target');
+
+        // Reset all buttons
+        buttons.forEach((b) => {
+          b.classList.remove('bg-white', 'shadow-sm', 'ring-1', 'ring-[#EAE4DC]');
+          b.classList.add('bg-transparent');
+        });
+
+        // Set active state on clicked button
+        btn.classList.add('bg-white', 'shadow-sm', 'ring-1', 'ring-[#EAE4DC]');
+        btn.classList.remove('bg-transparent');
+
+        // Hide all content panels
+        contents.forEach((content) => {
+          content.classList.remove('opacity-100', 'visible', 'z-10', 'translate-y-0');
+          content.classList.add('opacity-0', 'invisible', 'z-0', 'translate-y-4');
+        });
+
+        // Show the targeted content panel
+        const targetContent = document.getElementById(`outlet-content-${targetId}`);
+        if (targetContent) {
+          targetContent.classList.remove('opacity-0', 'invisible', 'z-0', 'translate-y-4');
+          targetContent.classList.add('opacity-100', 'visible', 'z-10', 'translate-y-0');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+  
+  /* Smooth scrolling globally for the page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reveal Animations */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-100 {
+    transition-delay: 150ms;
+  }
+  .delay-200 {
+    transition-delay: 300ms;
+  }
+</style>

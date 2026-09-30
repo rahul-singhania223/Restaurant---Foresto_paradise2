@@ -1,0 +1,968 @@
+---
+/*
+ * Foresto Paradise — Reservation Section
+ *
+ * IMAGE PLACEHOLDERS:
+ * 1. /images/reservation/dining-interior.webp
+ *
+ * Replace the `src` value with your actual image.
+ */
+---
+
+<section id="reservation" class="relative overflow-hidden bg-[#FDFBF7] py-20 sm:py-24 lg:py-[120px]">
+  
+  <!-- ==========================================
+       BACKGROUND WAVES & GRADIENTS
+       ========================================== -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- Abstract wavy shape top left -->
+    <svg viewBox="0 0 1000 1000" class="absolute -left-[20%] -top-[20%] h-[1200px] w-[1200px] text-[#F5EFE6] opacity-60" fill="currentColor" aria-hidden="true">
+      <path d="M410.5,80.5C622.5,-30.5 832.5,120.5 900.5,350.5C968.5,580.5 835.5,820.5 620.5,910.5C405.5,1000.5 140.5,870.5 50.5,650.5C-39.5,430.5 198.5,191.5 410.5,80.5Z" />
+    </svg>
+    
+    <!-- Soft blur gradient bottom right -->
+    <div class="absolute -bottom-[10%] -right-[10%] h-[600px] w-[600px] rounded-full bg-[#EFE8DE] opacity-50 blur-[100px]"></div>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
+    <div class="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-8">
+      
+      <!-- ==========================================
+           LEFT COLUMN: CONTENT & FEATURES
+           ========================================== -->
+      <div class="relative z-10 lg:pr-8">
+        
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A87343]">
+            Reservation
+          </span>
+          <span class="h-px w-16 bg-[#A87343]/60"></span>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="mt-6 font-['Cormorant_Garamond'] text-[clamp(3.2rem,4.8vw,5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#171714]">
+          Book Your Table <br />
+          <span class="text-[#8E5C35]">For a Special Experience</span>
+        </h2>
+
+        <!-- Description -->
+        <p class="mt-6 max-w-[480px] text-[15px] leading-[1.6] text-[#5A5752] sm:text-[17px]">
+          Whether it's a casual dinner, a family celebration or a special occasion, we're here to make it memorable.
+        </p>
+
+        <!-- Features Row with Dividers -->
+        <div class="mt-12 flex flex-wrap items-center gap-y-8 divide-x divide-[#E5DED5]">
+          
+          <!-- Feature 1 -->
+          <div class="flex flex-col items-center px-6 text-center first:pl-0 sm:px-8">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EFE6] text-[#A87343]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.6947 13.7H15.7037M15.6947 16.7H15.7037M11.9947 13.7H12.0047M11.9947 16.7H12.0047M8.29474 13.7H8.30374M8.29474 16.7H8.30374" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-[15px] font-semibold text-[#171714]">Easy<br/>Booking</h4>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="flex flex-col items-center px-6 text-center sm:px-8">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EFE6] text-[#A87343]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M12 11.2002C13.9882 11.2002 15.6 9.58841 15.6 7.6002C15.6 5.61198 13.9882 4.0002 12 4.0002C10.0118 4.0002 8.4 5.61198 8.4 7.6002C8.4 9.58841 10.0118 11.2002 12 11.2002Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.5901 20.0001C18.5901 16.9201 15.6401 14.4102 12.0001 14.4102C8.36006 14.4102 5.41006 16.9201 5.41006 20.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M19 12C20.6569 12 22 10.6569 22 9C22 7.34315 20.6569 6 19 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 17C22 15.067 20.8239 13.4093 19 12.6593" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 12C3.34315 12 2 10.6569 2 9C2 7.34315 3.34315 6 5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17C2 15.067 3.1761 13.4093 5 12.6593" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-[15px] font-semibold text-[#171714]">Perfect for<br/>Groups</h4>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="flex flex-col items-center px-6 text-center sm:px-8">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5EFE6] text-[#A87343]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11C17 13.7614 14.7614 16 12 16C9.23858 16 7 13.7614 7 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 16V22M9 22H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 6L13 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="font-serif text-[15px] font-semibold text-[#171714]">Special<br/>Occasions</h4>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==========================================
+           RIGHT COLUMN: IMAGE & FORM
+           ========================================== -->
+      <div class="relative z-10 mt-16 flex justify-end lg:mt-0">
+        
+        <!-- Large Arch Image Container -->
+        <!-- Pushed to the right edge with a massive left border-radius -->
+        <div class="relative h-[550px] w-full max-w-[650px] overflow-hidden rounded-l-[200px] shadow-2xl sm:h-[650px] sm:rounded-l-[300px] lg:-mr-10 lg:rounded-l-[400px]">
+          <img src="https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGluaW5nJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D" alt="Elegant dining room interior" class="h-full w-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+        </div>
+
+        <!-- Glassmorphic Reservation Form Card -->
+        <!-- Overlaps the left side of the arch image -->
+      <div
+  class="absolute left-0 top-1/2 z-20 w-full max-w-[380px] -translate-y-1/2 rounded-[24px] border border-white/60 bg-white/70 p-7 shadow-[0_20px_50px_rgba(0,0,0,0.1)] backdrop-blur-xl sm:left-4 lg:-left-12 lg:p-9"
+  id="reservation-card"
+>
+  <h3 class="font-serif text-[26px] font-semibold text-[#171714]">
+    Make a Reservation
+  </h3>
+
+  <p class="mt-1.5 text-[14px] text-[#7A756D]">
+    A great dining experience awaits you.
+  </p>
+
+  <form id="reservation-form" class="mt-8 flex flex-col gap-4">
+
+    <!-- DATE -->
+    <div class="relative">
+      <div
+        class="flex w-full items-center gap-3 rounded-xl border border-white bg-white/80 px-5 py-3.5 text-[14px] text-[#5A5752] shadow-sm transition-all duration-300 hover:bg-white hover:shadow-md focus-within:ring-2 focus-within:ring-[#A87343]/30"
+      >
+        <!-- Calendar icon -->
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="pointer-events-none h-4 w-4 shrink-0 text-[#A87343]"
+          aria-hidden="true"
+        >
+          <path
+            d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <input
+          id="reservation-date"
+          type="date"
+          required
+          class="min-w-0 flex-1 cursor-pointer bg-transparent text-[14px] text-[#5A5752] outline-none"
+          aria-label="Select reservation date"
+        />
+      </div>
+    </div>
+
+
+    <!-- TIME -->
+    <div class="relative">
+      <button
+        type="button"
+        id="time-trigger"
+        class="flex w-full items-center justify-between rounded-xl border border-white bg-white/80 px-5 py-3.5 text-[14px] text-[#5A5752] shadow-sm transition-all duration-300 hover:bg-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#A87343]/30"
+      >
+        <div class="flex items-center gap-3">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-4 w-4 text-[#A87343]"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M12 6V12L16 14"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <span id="time-label">Select Time</span>
+        </div>
+
+        <svg
+          viewBox="0 0 20 20"
+          fill="none"
+          class="h-4 w-4 text-[#9A958D] transition-transform duration-300"
+          id="time-arrow"
+        >
+          <path
+            d="M5 7.5L10 12.5L15 7.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- TIME MENU -->
+      <div
+        id="time-menu"
+        class="invisible absolute left-0 right-0 top-[calc(100%+8px)] z-50 translate-y-2 rounded-xl border border-[#E8E0D7] bg-white p-2 opacity-0 shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition-all duration-200"
+      >
+        <div class="grid grid-cols-3 gap-1.5">
+
+          <button type="button" data-time="12:00 PM" class="time-option">
+            12:00 PM
+          </button>
+
+          <button type="button" data-time="12:30 PM" class="time-option">
+            12:30 PM
+          </button>
+
+          <button type="button" data-time="1:00 PM" class="time-option">
+            1:00 PM
+          </button>
+
+          <button type="button" data-time="1:30 PM" class="time-option">
+            1:30 PM
+          </button>
+
+          <button type="button" data-time="7:00 PM" class="time-option">
+            7:00 PM
+          </button>
+
+          <button type="button" data-time="7:30 PM" class="time-option">
+            7:30 PM
+          </button>
+
+          <button type="button" data-time="8:00 PM" class="time-option">
+            8:00 PM
+          </button>
+
+          <button type="button" data-time="8:30 PM" class="time-option">
+            8:30 PM
+          </button>
+
+          <button type="button" data-time="9:00 PM" class="time-option">
+            9:00 PM
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- GUESTS -->
+    <div class="relative">
+      <button
+        type="button"
+        id="guest-trigger"
+        class="flex w-full items-center justify-between rounded-xl border border-white bg-white/80 px-5 py-3.5 text-[14px] text-[#5A5752] shadow-sm transition-all duration-300 hover:bg-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#A87343]/30"
+      >
+        <div class="flex items-center gap-3">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-4 w-4 text-[#A87343]"
+          >
+            <path
+              d="M12 11.2002C13.9882 11.2002 15.6 9.58841 15.6 7.6002C15.6 5.61198 13.9882 4.0002 12 4.0002C10.0118 4.0002 8.4 5.61198 8.4 7.6002C8.4 9.58841 10.0118 11.2002 12 11.2002Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+
+            <path
+              d="M18.5901 20.0001C18.5901 16.9201 15.6401 14.4102 12.0001 14.4102C8.36006 14.4102 5.41006 16.9201 5.41006 20.0001"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+
+          <span id="guest-label">Number of Guests</span>
+        </div>
+
+        <svg
+          viewBox="0 0 20 20"
+          fill="none"
+          class="h-4 w-4 text-[#9A958D]"
+        >
+          <path
+            d="M5 7.5L10 12.5L15 7.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- GUEST MENU -->
+      <div
+        id="guest-menu"
+        class="invisible absolute left-0 right-0 top-[calc(100%+8px)] z-50 translate-y-2 rounded-xl border border-[#E8E0D7] bg-white p-2 opacity-0 shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition-all duration-200"
+      >
+        <div class="grid grid-cols-4 gap-1.5">
+
+          <button type="button" data-guests="1" class="guest-option">
+            1
+          </button>
+
+          <button type="button" data-guests="2" class="guest-option">
+            2
+          </button>
+
+          <button type="button" data-guests="3" class="guest-option">
+            3
+          </button>
+
+          <button type="button" data-guests="4" class="guest-option">
+            4
+          </button>
+
+          <button type="button" data-guests="5" class="guest-option">
+            5
+          </button>
+
+          <button type="button" data-guests="6" class="guest-option">
+            6
+          </button>
+
+          <button type="button" data-guests="7" class="guest-option">
+            7
+          </button>
+
+          <button type="button" data-guests="8" class="guest-option">
+            8
+          </button>
+
+        </div>
+
+        <p class="px-2 pb-1 pt-2 text-[11px] text-[#9A958D]">
+          For parties larger than 8, please contact us directly.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- SUBMIT -->
+    <button
+      type="submit"
+      class="group mt-2 flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#A87343] to-[#8E5C35] px-6 py-4 text-[15px] font-medium text-white shadow-[0_8px_20px_rgba(168,115,67,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_25px_rgba(168,115,67,0.35)] focus:outline-none focus:ring-2 focus:ring-[#A87343] focus:ring-offset-2"
+    >
+      <span id="submit-label">Book a Table</span>
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+      >
+        <path
+          d="M5 12H19M13 6L19 12L13 18"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <!-- SUCCESS MESSAGE -->
+    <div
+      id="reservation-success"
+      class="hidden rounded-xl border border-[#D9E6D8] bg-[#F3F8F1] px-4 py-3 text-center text-[13px] text-[#53664F]"
+    ></div>
+
+  </form>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Ensure elegant fonts are loaded. */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap');
+  
+  /* Additional polish for the glassmorphism blur effect */
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+  }
+</style>
+
+<style>
+  .time-option,
+  .guest-option {
+    border-radius: 9px;
+    padding: 9px 6px;
+    font-size: 12px;
+    color: #5a5752;
+    transition: all 180ms ease;
+  }
+
+  .time-option:hover,
+  .guest-option:hover {
+    background: #f5efe6;
+    color: #a87343;
+  }
+
+  .time-option.selected,
+  .guest-option.selected {
+    background: #a87343;
+    color: white;
+  }
+
+  #time-menu.open,
+  #guest-menu.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+
+<script>
+  (() => {
+    const form = document.querySelector("#reservation-form");
+
+    if (!form) return;
+
+    const dateInput = document.querySelector("#reservation-date");
+    const dateLabel = document.querySelector("#date-label");
+
+    const timeTrigger = document.querySelector("#time-trigger");
+    const timeMenu = document.querySelector("#time-menu");
+    const timeLabel = document.querySelector("#time-label");
+    const timeArrow = document.querySelector("#time-arrow");
+
+    const guestTrigger = document.querySelector("#guest-trigger");
+    const guestMenu = document.querySelector("#guest-menu");
+    const guestLabel = document.querySelector("#guest-label");
+
+    const success = document.querySelector("#reservation-success");
+    const submitLabel = document.querySelector("#submit-label");
+
+    let selectedTime = "";
+    let selectedGuests = "";
+
+    /* --------------------------------
+       Minimum date = today
+    -------------------------------- */
+
+    const today = new Date();
+
+    const localDate =
+      today.getFullYear() +
+      "-" +
+      String(today.getMonth() + 1).padStart(2, "0") +
+      "-" +
+      String(today.getDate()).padStart(2, "0");
+
+    dateInput.min = localDate;
+
+
+    /* --------------------------------
+       Date selection
+    -------------------------------- */
+
+    dateInput.addEventListener("change", () => {
+      if (!dateInput.value) return;
+
+      const date = new Date(dateInput.value + "T00:00:00");
+
+      dateLabel.textContent = date.toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+
+      dateLabel.classList.add("text-[#171714]");
+    });
+
+
+    /* --------------------------------
+       Dropdown helper
+    -------------------------------- */
+
+    const closeMenus = () => {
+      timeMenu.classList.remove("open");
+      guestMenu.classList.remove("open");
+
+      timeArrow.classList.remove("rotate-180");
+    };
+
+
+    /* --------------------------------
+       Time picker
+    -------------------------------- */
+
+    timeTrigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      guestMenu.classList.remove("open");
+
+      timeMenu.classList.toggle("open");
+      timeArrow.classList.toggle(
+        "rotate-180",
+        timeMenu.classList.contains("open")
+      );
+    });
+
+
+    document.querySelectorAll(".time-option").forEach((option) => {
+      option.addEventListener("click", () => {
+
+        selectedTime = option.dataset.time;
+
+        timeLabel.textContent = selectedTime;
+        timeLabel.classList.add("text-[#171714]");
+
+        document
+          .querySelectorAll(".time-option")
+          .forEach((item) => item.classList.remove("selected"));
+
+        option.classList.add("selected");
+
+        timeMenu.classList.remove("open");
+        timeArrow.classList.remove("rotate-180");
+      });
+    });
+
+
+    /* --------------------------------
+       Guest picker
+    -------------------------------- */
+
+    guestTrigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      timeMenu.classList.remove("open");
+      timeArrow.classList.remove("rotate-180");
+
+      guestMenu.classList.toggle("open");
+    });
+
+
+    document.querySelectorAll(".guest-option").forEach((option) => {
+      option.addEventListener("click", () => {
+
+        selectedGuests = option.dataset.guests;
+
+        guestLabel.textContent =
+          selectedGuests === "1"
+            ? "1 Guest"
+            : `${selectedGuests} Guests`;
+
+        guestLabel.classList.add("text-[#171714]");
+
+        document
+          .querySelectorAll(".guest-option")
+          .forEach((item) => item.classList.remove("selected"));
+
+        option.classList.add("selected");
+
+        guestMenu.classList.remove("open");
+      });
+    });
+
+
+    /* --------------------------------
+       Close dropdown when clicking outside
+    -------------------------------- */
+
+    document.addEventListener("click", () => {
+      closeMenus();
+    });
+
+
+    /* --------------------------------
+       Prevent dropdown clicks bubbling
+    -------------------------------- */
+
+    timeMenu.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    guestMenu.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+
+    /* --------------------------------
+       Submit
+    -------------------------------- */
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!dateInput.value) {
+        dateInput.focus();
+        return;
+      }
+
+      if (!selectedTime) {
+        timeTrigger.focus();
+        timeMenu.classList.add("open");
+        return;
+      }
+
+      if (!selectedGuests) {
+        guestTrigger.focus();
+        guestMenu.classList.add("open");
+        return;
+      }
+
+      const date = new Date(dateInput.value + "T00:00:00");
+
+      const formattedDate = date.toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+
+      success.textContent =
+        `Table request received for ${selectedGuests} ` +
+        `${selectedGuests === "1" ? "guest" : "guests"} on ` +
+        `${formattedDate} at ${selectedTime}.`;
+
+      success.classList.remove("hidden");
+
+      submitLabel.textContent = "Reservation Requested";
+
+      form.querySelector("button[type='submit']").disabled = true;
+      form.querySelector("button[type='submit']").classList.add(
+        "opacity-80",
+        "cursor-default"
+      );
+    });
+  })();
+</script>
+
+<style>
+  /* ---------------------------------------------------------
+     Smooth scrolling
+     --------------------------------------------------------- */
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ---------------------------------------------------------
+     Main section reveal
+     --------------------------------------------------------- */
+
+  #reservation .menu-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #reservation .menu-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Softer image / chef visual reveal
+     --------------------------------------------------------- */
+
+  #reservation .menu-reveal-image {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+    transition:
+      opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #reservation .menu-reveal-image.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ---------------------------------------------------------
+     Category navigation
+     --------------------------------------------------------- */
+
+  #reservation .menu-reveal-nav {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #reservation .menu-reveal-nav.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Dish cards
+     --------------------------------------------------------- */
+
+  #reservation .dish-card.menu-reveal-card {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 500ms ease;
+    transition-delay: var(--menu-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  #reservation .dish-card.menu-reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Bottom CTA
+     --------------------------------------------------------- */
+
+  #reservation .menu-reveal-cta {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #reservation .menu-reveal-cta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------------------------------------------------------
+     Subtle image hover
+     --------------------------------------------------------- */
+
+  #reservation .dish-card img {
+    transition:
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #reservation .dish-card:hover img {
+    transform: scale(1.025);
+  }
+
+  /* ---------------------------------------------------------
+     Reduced motion
+     --------------------------------------------------------- */
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    #reservation .menu-reveal,
+    #reservation .menu-reveal-image,
+    #reservation .menu-reveal-nav,
+    #reservation .dish-card.menu-reveal-card,
+    #reservation .menu-reveal-cta {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    #reservation .dish-card img {
+      transition: none;
+    }
+  }
+</style>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  #reservation {
+    --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #reservation .reveal,
+  #reservation .reveal-soft,
+  #reservation .reveal-scale {
+    opacity: 0;
+    will-change: opacity, transform;
+  }
+
+  #reservation .reveal {
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity 800ms var(--reveal-ease),
+      transform 800ms var(--reveal-ease);
+  }
+
+  #reservation .reveal-soft {
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 900ms var(--reveal-ease),
+      transform 900ms var(--reveal-ease);
+  }
+
+  #reservation .reveal-scale {
+    transform: translate3d(0, 18px, 0) scale(0.985);
+    transition:
+      opacity 1000ms var(--reveal-ease),
+      transform 1000ms var(--reveal-ease);
+  }
+
+  #reservation .reveal.is-visible,
+  #reservation .reveal-soft.is-visible,
+  #reservation .reveal-scale.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  #reservation [data-reveal-delay="1"] { transition-delay: 80ms; }
+  #reservation [data-reveal-delay="2"] { transition-delay: 160ms; }
+  #reservation [data-reveal-delay="3"] { transition-delay: 240ms; }
+  #reservation [data-reveal-delay="4"] { transition-delay: 320ms; }
+
+  #reservation img {
+    transition: transform 1200ms var(--reveal-ease);
+  }
+
+  #reservation .about-image:hover img {
+    transform: scale(1.02);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    #reservation .reveal,
+    #reservation .reveal-soft,
+    #reservation .reveal-scale {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    #reservation img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const initAboutReveal = () => {
+      const section = document.querySelector("#reservation");
+      if (!section || section.dataset.revealInitialized === "true") return;
+
+      section.dataset.revealInitialized = "true";
+
+      const grid = section.querySelector(":scope > div.mx-auto > div");
+      if (!grid) return;
+
+      const left = grid.children[0];
+      const right = grid.children[1];
+
+      /*
+       * Left side:
+       * eyebrow → heading → description → features → CTA
+       */
+      if (left) {
+        const eyebrow = left.children[0];
+        const heading = left.querySelector("h2");
+        const description = left.querySelector("p");
+        const features = left.querySelector(":scope > div.mt-12");
+        const cta = left.querySelector(":scope > div.mt-12:last-child");
+
+        [eyebrow, heading, description].forEach((el) => {
+          if (el) el.classList.add("reveal");
+        });
+
+        if (features) {
+          [...features.children].forEach((feature, index) => {
+            feature.classList.add("reveal-soft");
+            if (index > 0) {
+              feature.dataset.revealDelay = String(Math.min(index, 4));
+            }
+          });
+        }
+
+        if (cta) {
+          cta.classList.add("reveal");
+          cta.dataset.revealDelay = "2";
+        }
+      }
+
+      /*
+       * Right side:
+       * main visual + quote card + floating images + social proof + annotation
+       */
+      if (right) {
+        const visual = right.querySelector(":scope > div.relative");
+
+        if (visual) {
+          visual.classList.add("reveal-scale", "about-image");
+
+          const quote = visual.querySelector(":scope > div.absolute.-right-4");
+          const floatingImages = visual.querySelector(
+            ":scope > div.absolute.bottom-\\[25\\%\\]"
+          );
+          const socialProof = visual.querySelector(
+            ":scope > div.absolute.-bottom-8"
+          );
+          const annotation = visual.querySelector(
+            ":scope > div.absolute.-bottom-\\[70px\\]"
+          );
+
+          [quote, floatingImages, socialProof, annotation].forEach((el, index) => {
+            if (!el) return;
+            el.classList.add("reveal-soft");
+            el.dataset.revealDelay = String(Math.min(index + 1, 4));
+          });
+        }
+      }
+
+      const elements = section.querySelectorAll(
+        ".reveal, .reveal-soft, .reveal-scale"
+      );
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (reduceMotion) {
+        elements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, observerInstance) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-visible");
+            observerInstance.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -60px 0px",
+        }
+      );
+
+      elements.forEach((element) => observer.observe(element));
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAboutReveal, {
+        once: true,
+      });
+    } else {
+      initAboutReveal();
+    }
+  })();
+</script>

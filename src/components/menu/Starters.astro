@@ -1,0 +1,782 @@
+---
+const dishes = [
+  {
+    name: "Paneer Tikka",
+    description:
+      "Soft cottage cheese marinated in yogurt and spices, grilled to perfection in a tandoor.",
+    price: "₹320",
+    image:
+      "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=1200&q=85",
+    tags: [
+      { label: "VEGETARIAN", icon: "leaf", type: "gold" },
+      { label: "POPULAR", icon: "flame", type: "gold-filled" },
+    ],
+  },
+  {
+    name: "Crispy Corn",
+    description:
+      "Golden corn kernels tossed with aromatic spices, herbs and a hint of schezwan.",
+    price: "₹280",
+    image:
+      "https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=1200&q=85",
+    tags: [
+      { label: "VEGETARIAN", icon: "leaf", type: "gold" },
+    ],
+  },
+  {
+    name: "Chicken Tikka",
+    description:
+      "Juicy chicken pieces marinated in signature spices, grilled in a clay oven for a smoky flavour.",
+    price: "₹360",
+    image:
+      "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1200&q=85",
+    tags: [
+      { label: "NON-VEG", icon: "leaf", type: "gold" },
+      { label: "CHEF'S CHOICE", icon: "flame", type: "gold-filled" },
+    ],
+  },
+  {
+    name: "Chicken 65",
+    description:
+      "A classic South Indian favourite — crispy, spicy and packed with bold flavours.",
+    price: "₹340",
+    image:
+      "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=1200&q=85",
+    tags: [
+      { label: "NON-VEG", icon: "leaf", type: "gold" },
+      { label: "SPICY", icon: "flame", type: "red" },
+    ],
+  },
+  {
+    name: "Hara Bhara Kebab",
+    description:
+      "A wholesome blend of fresh greens, herbs and spices, shallow fried to perfection.",
+    price: "₹300",
+    image:
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=85",
+    tags: [
+      { label: "VEGETARIAN", icon: "leaf", type: "gold" },
+      { label: "HEALTHY", icon: "leaf", type: "green" },
+    ],
+  },
+  {
+    name: "Tandoori Prawns",
+    description:
+      "Succulent prawns marinated in house spices, chargrilled for a rich and smoky taste.",
+    price: "₹480",
+    image:
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85",
+    tags: [
+      { label: "SEAFOOD", icon: "shell", type: "gold" },
+      { label: "SIGNATURE", icon: "star", type: "gold-filled" },
+    ],
+  },
+];
+---
+
+<section
+  id="starters"
+  data-reveal-section
+  class="relative isolate overflow-hidden bg-[#F8F4EB] px-4 py-10 text-[#111] sm:px-6 sm:py-14 lg:px-8 lg:py-[52px]"
+>
+  <!-- =====================================================
+       DECORATIVE BOTANICAL — TOP CENTER
+  ====================================================== -->
+
+  <div
+    aria-hidden="true"
+    class="starters-decor starters-decor-top pointer-events-none absolute left-[38%] top-[-18px] z-0 hidden h-[150px] w-[330px] text-[#B9A991] opacity-50 lg:block"
+  >
+    <svg viewBox="0 0 330 150" fill="none" class="h-full w-full">
+      <path
+        d="M158 154C157 110 151 65 126 14"
+        stroke="currentColor"
+        stroke-width="1"
+      />
+
+      <path
+        d="M160 142C177 96 200 54 239 12"
+        stroke="currentColor"
+        stroke-width="1"
+      />
+
+      <path
+        d="M152 111C126 89 101 75 69 69C96 91 123 103 152 111Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M164 95C189 72 211 57 240 51C216 72 191 85 164 95Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M145 80C126 57 116 34 116 9C135 31 144 54 145 80Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M180 65C201 41 218 24 244 13C226 37 205 54 180 65Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M194 42C205 23 218 11 237 2"
+        stroke="currentColor"
+      />
+    </svg>
+  </div>
+
+
+  <!-- =====================================================
+       BOTTOM RIGHT BOTANICAL
+  ====================================================== -->
+
+  <div
+    aria-hidden="true"
+    class="starters-decor starters-decor-bottom pointer-events-none absolute -bottom-10 -right-16 z-0 h-[220px] w-[380px] rotate-[-4deg] text-[#B9A991] opacity-40 sm:h-[270px] sm:w-[470px] lg:-bottom-16 lg:right-[-20px]"
+  >
+    <svg viewBox="0 0 470 270" fill="none" class="h-full w-full">
+      <path
+        d="M14 265C82 223 137 184 196 146C263 103 335 65 455 15"
+        stroke="currentColor"
+        stroke-width="1"
+      />
+
+      <path
+        d="M121 205C89 191 60 188 29 194C61 207 91 211 121 205Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M166 175C140 147 124 121 120 91C144 116 159 144 166 175Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M212 148C190 119 181 93 184 65C203 91 211 118 212 148Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M263 119C264 86 273 61 292 38C288 70 278 96 263 119Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M319 91C340 65 362 49 391 40C370 62 346 78 319 91Z"
+        stroke="currentColor"
+      />
+
+      <path
+        d="M367 65C385 42 405 27 430 20C412 41 391 56 367 65Z"
+        stroke="currentColor"
+      />
+    </svg>
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTAINER
+  ====================================================== -->
+
+  <div
+    class="starters-main relative z-[2] mx-auto grid w-full max-w-[1510px] grid-cols-1 gap-8 lg:grid-cols-[355px_minmax(0,1fr)] lg:gap-[27px]"
+  >
+
+    <!-- ===================================================
+         LEFT EDITORIAL PANEL
+    ==================================================== -->
+
+    <aside
+      class="starters-editorial relative flex min-h-[500px] flex-col overflow-hidden lg:min-h-[825px]"
+    >
+
+      <!-- -----------------------------------------------
+           TOP NAV
+      ------------------------------------------------ -->
+
+     
+
+
+      <!-- -----------------------------------------------
+           LEAF ICON
+      ------------------------------------------------ -->
+
+      <div
+        class="absolute left-1/2 top-[2px] -translate-x-1/2 text-[#B87517]"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-6 w-6"
+        >
+          <path
+            d="M12 20C12 13 13.8 7.8 20 4C20.3 10.9 17.2 15.4 12 16.9"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M12 20C12 14.7 10.2 9.2 4 7C4.2 13.1 7.4 16.6 12 17.5"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M12 20V5"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+
+     
+
+
+      <!-- -----------------------------------------------
+           TITLE
+      ------------------------------------------------ -->
+
+      <div class="starters-title mt-8 lg:mt-[62px]">
+
+        <h1
+          class="font-serif text-[70px] font-medium leading-[0.82] tracking-[-3px] text-[#101010] sm:text-[86px] lg:text-[82px] xl:text-[90px]"
+        >
+          Start<span class="text-[#B67518]">ers</span>
+        </h1>
+
+        <p
+          class="mt-7 max-w-[330px] font-serif text-[27px] leading-[1.18] text-[#625D56] sm:text-[30px]"
+        >
+          Small plates. Big flavours.
+          <br />
+          A perfect beginning to
+          <br />
+          your dining experience.
+        </p>
+
+      </div>
+
+
+      <!-- -----------------------------------------------
+           SMALL DIVIDER
+      ------------------------------------------------ -->
+
+      <div class="mt-6 h-px w-[55px] bg-[#C49150]"></div>
+
+
+      <!-- -----------------------------------------------
+           DESCRIPTION
+      ------------------------------------------------ -->
+
+      <p
+        class="starters-description mt-4 max-w-[310px] font-sans text-[15px] leading-[1.55] text-[#77716A]"
+      >
+        From smoky kebabs to crispy delights, our starters are crafted to
+        awaken your appetite and set the tone for an unforgettable meal.
+      </p>
+
+
+      <!-- -----------------------------------------------
+           HERO FOOD IMAGE
+      ------------------------------------------------ -->
+
+      <div
+        class="starters-food absolute -bottom-[30px] -left-[120px] hidden h-[390px] w-[520px] sm:block lg:-left-[145px] lg:h-[450px] lg:w-[570px]"
+      >
+
+        <!-- Gold brush behind plate -->
+
+        <div
+          class="absolute bottom-[5px] left-[35px] h-[270px] w-[450px] rotate-[-9deg] rounded-[50%] border-[12px] border-[#B88638] opacity-25 blur-[1px]"
+        ></div>
+
+        <!-- Food image -->
+
+        <!-- <div
+          class="absolute bottom-[15px] left-[70px] h-[390px] w-[390px] overflow-hidden rounded-full shadow-[0_20px_40px_rgba(54,37,20,0.12)] lg:h-[430px] lg:w-[430px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=1000&q=90"
+            alt="Paneer tikka"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div> -->
+
+        <!-- Small scattered leaf -->
+
+        <svg
+          viewBox="0 0 40 40"
+          class="absolute bottom-[55px] right-[45px] h-10 w-10 rotate-[25deg] text-[#567325]"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M34 5C20 7 8 15 8 27C17 26 28 20 34 5Z"
+          />
+          <path
+            d="M9 28C17 20 24 14 32 8"
+            fill="none"
+            stroke="#F8F4EB"
+            stroke-width="1"
+          />
+        </svg>
+
+      </div>
+
+
+      <!-- -----------------------------------------------
+           SCRIPT QUOTE
+      ------------------------------------------------ -->
+
+      <!-- <div
+        class="absolute bottom-0 right-[-2px] hidden w-[175px] rotate-[-7deg] text-[#A66C1D] sm:block"
+      >
+        <p
+          class="font-[cursive] text-[28px] leading-[0.9]"
+        >
+          Flavours
+          <br />
+          That Bring
+          <br />
+          People Together.
+        </p>
+      </div> -->
+
+    </aside>
+
+
+    <!-- ===================================================
+         RIGHT SIDE
+    ==================================================== -->
+
+    <div class="starters-right relative">
+
+      <!-- -----------------------------------------------
+           TOP BAR
+      ------------------------------------------------ -->
+
+      <div
+        class="mb-[38px] hidden items-center justify-between sm:flex"
+      >
+
+        <div
+          class="flex flex-1 items-center justify-center gap-[18px] font-sans text-[10px] font-medium tracking-[4px] text-[#A36A1D]"
+        >
+          <span class="h-px w-[58px] bg-[#BC8B48]"></span>
+
+          <span>FROM OUR KITCHEN</span>
+
+          <span class="h-px w-[58px] bg-[#BC8B48]"></span>
+        </div>
+
+
+        <!-- <a
+          href="/menu"
+          class="ml-8 flex items-center gap-4 border-b border-[#C5A26D] pb-[8px] font-sans text-[10px] font-semibold tracking-[2px] text-[#87520F] transition-colors hover:text-[#B67518]"
+        >
+          <span class="text-[17px]">←</span>
+          <span>BACK TO MENU</span>
+        </a> -->
+
+      </div>
+
+
+      <!-- -----------------------------------------------
+           MOBILE TOP LABEL
+      ------------------------------------------------ -->
+
+      <div
+        class="mb-7 flex items-center justify-between sm:hidden"
+      >
+        <div
+          class="font-sans text-[9px] font-medium tracking-[3px] text-[#A36A1D]"
+        >
+          FROM OUR KITCHEN
+        </div>
+
+        <!-- <a
+          href="/menu"
+          class="font-sans text-[9px] font-semibold tracking-[1.5px] text-[#87520F]"
+        >
+          ← MENU
+        </a> -->
+      </div>
+
+
+      <!-- -----------------------------------------------
+           DISH GRID
+      ------------------------------------------------ -->
+
+      <div
+        class="starters-grid grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3 lg:gap-[21px]"
+      >
+
+        {dishes.map((dish) => (
+          <article
+            class="starter-card group overflow-hidden rounded-[15px] bg-[rgba(250,247,239,0.96)] shadow-[0_7px_22px_rgba(73,51,25,0.035)] transition-all duration-500 ease-[cubic-bezier(.2,.75,.25,1)] hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(73,51,25,0.1)]"
+          >
+
+            <!-- Image -->
+
+            <div class="relative h-[220px] overflow-hidden bg-[#211B15] sm:h-[205px] lg:h-[220px]">
+
+              <img
+                src={dish.image}
+                alt={dish.name}
+                loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(.2,.75,.25,1)] group-hover:scale-[1.045]"
+              />
+
+              <!-- Image darkening -->
+
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/10"
+              ></div>
+
+
+              <!-- Tags -->
+
+              <div
+                class="absolute left-[14px] right-[14px] top-[14px] flex items-center justify-between gap-2"
+              >
+
+                {dish.tags.map((tag) => (
+                  <span
+                    class:list={[
+                      "inline-flex min-h-[31px] items-center gap-[7px] rounded-full border px-[11px] font-sans text-[9px] font-semibold tracking-[1px] backdrop-blur-[5px]",
+                      tag.type === "gold" &&
+                        "border-[#D7AD64] bg-black/45 text-white",
+                      tag.type === "gold-filled" &&
+                        "border-[#E1B357] bg-[#A9670E]/90 text-white",
+                      tag.type === "red" &&
+                        "border-[#F17B62] bg-[#C9472C]/90 text-white",
+                      tag.type === "green" &&
+                        "border-[#9CBB65] bg-[#647B36]/90 text-white",
+                    ]}
+                  >
+
+                    {tag.icon === "leaf" && (
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class="h-[12px] w-[12px]"
+                      >
+                        <path
+                          d="M19.5 4.5C11 5 5.2 9.5 5.2 16.2C10.8 16.2 17.3 12.4 19.5 4.5Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M5.5 19C9 14.8 12.5 11.2 17.8 7.5"
+                          stroke="currentColor"
+                          stroke-width="1"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    )}
+
+                    {tag.icon === "flame" && (
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="h-[12px] w-[12px]"
+                      >
+                        <path
+                          d="M12.4 2C13.1 6.1 10.5 7.9 9.2 10.1C8.3 11.6 8.4 13.5 9.8 14.8C9.6 12.4 11.3 10.8 13.1 10C16 12.2 17.1 14.5 16.2 17C15.7 18.4 14.3 19.5 12.5 19.7C10 20 7.7 18.3 7.2 15.9C6.6 13 8.1 10.8 10.1 8.7C11.8 6.9 12.7 4.8 12.4 2Z"
+                        />
+                      </svg>
+                    )}
+
+                    {tag.icon === "star" && (
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="h-[12px] w-[12px]"
+                      >
+                        <path d="M12 2.5L14.9 8.4L21.4 9.3L16.7 13.9L17.8 20.4L12 17.3L6.2 20.4L7.3 13.9L2.6 9.3L9.1 8.4L12 2.5Z" />
+                      </svg>
+                    )}
+
+                    {tag.icon === "shell" && (
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class="h-[12px] w-[12px]"
+                      >
+                        <path
+                          d="M5 17C5 11.5 8.1 6 12 6C15.9 6 19 11.5 19 17"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M12 6V17M8.5 8.5L9.5 17M15.5 8.5L14.5 17"
+                          stroke="currentColor"
+                          stroke-width="1"
+                        />
+                      </svg>
+                    )}
+
+                    {tag.label}
+
+                  </span>
+                ))}
+
+              </div>
+
+            </div>
+
+
+            <!-- Card Content -->
+
+            <div
+              class="flex min-h-[178px] flex-col px-5 pb-4 pt-[17px] sm:min-h-[178px]"
+            >
+
+              <h3
+                class="font-serif text-[24px] font-semibold leading-[1] tracking-[-0.4px] text-[#111]"
+              >
+                {dish.name}
+              </h3>
+
+              <p
+                class="mt-[9px] max-w-[280px] font-sans text-[13px] leading-[1.5] text-[#77726B]"
+              >
+                {dish.description}
+              </p>
+
+
+              <!-- Bottom -->
+
+              <div class="mt-auto flex items-center justify-between pt-4">
+
+                <span
+                  class="font-sans text-[19px] font-semibold tracking-[-0.2px] text-[#A4650D]"
+                >
+                  {dish.price}
+                </span>
+
+
+                <!-- Add -->
+
+                <button
+                  type="button"
+                  aria-label={`Add ${dish.name}`}
+                  class="relative grid h-[44px] w-[44px] place-items-center rounded-full border-[1.5px] border-[#B97818] transition-all duration-300 hover:rotate-90 hover:bg-[#B97818]"
+                >
+                  <span
+                    class="absolute h-[1.5px] w-[14px] bg-[#B97818] transition-colors group-hover:bg-white"
+                  ></span>
+
+                  <span
+                    class="absolute h-[1.5px] w-[14px] rotate-90 bg-[#B97818] transition-colors group-hover:bg-white"
+                  ></span>
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <style>
+    /* Smooth, soft reveal system — existing design remains unchanged. */
+    [data-reveal-section] {
+      --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-reveal-section] .starters-main > *,
+    [data-reveal-section] .starters-right > * {
+      opacity: 0;
+      transform: translateY(24px);
+      will-change: opacity, transform;
+      transition:
+        opacity 850ms var(--reveal-ease),
+        transform 950ms var(--reveal-ease);
+    }
+
+    [data-reveal-section].is-visible .starters-main > * {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    [data-reveal-section].is-visible .starters-right > * {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    [data-reveal-section].is-visible .starters-main > aside {
+      transition-delay: 80ms;
+    }
+
+    [data-reveal-section].is-visible .starters-right > div:first-child {
+      transition-delay: 180ms;
+    }
+
+    [data-reveal-section].is-visible .starters-right > div:last-child {
+      transition-delay: 280ms;
+    }
+
+    /* Editorial details get their own softer entrance. */
+    [data-reveal-section] .starters-title,
+    [data-reveal-section] .starters-description,
+    [data-reveal-section] .starters-food {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 900ms var(--reveal-ease),
+        transform 1050ms var(--reveal-ease);
+    }
+
+    [data-reveal-section].is-visible .starters-title {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 220ms;
+    }
+
+    [data-reveal-section].is-visible .starters-description {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 340ms;
+    }
+
+    [data-reveal-section].is-visible .starters-food {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 440ms;
+    }
+
+    /* Food image gently settles into place. */
+    [data-reveal-section] .starters-food img {
+      transform: scale(1.045);
+      will-change: transform;
+      transition: transform 1200ms var(--reveal-ease);
+    }
+
+    [data-reveal-section].is-visible .starters-food img {
+      transform: scale(1);
+    }
+
+    /* Cards reveal individually as they enter the viewport. */
+    [data-reveal-section] .starter-card {
+      opacity: 0;
+      transform: translateY(30px);
+      will-change: opacity, transform;
+    }
+
+    [data-reveal-section] .starter-card.is-card-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 750ms var(--reveal-ease),
+        transform 850ms var(--reveal-ease);
+      transition-delay: var(--card-delay, 0ms);
+    }
+
+    /* Existing card image hover remains intact; this only adds a soft entrance. */
+    [data-reveal-section] .starter-card img {
+      opacity: 0;
+      transform: scale(1.025);
+      transition:
+        opacity 650ms var(--reveal-ease),
+        transform 900ms var(--reveal-ease);
+    }
+
+    [data-reveal-section] .starter-card.is-card-visible img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Decorative botanicals drift very subtly after entering. */
+    [data-reveal-section] .starters-decor {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 1100ms var(--reveal-ease),
+        transform 1300ms var(--reveal-ease);
+    }
+
+    [data-reveal-section].is-visible .starters-decor {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    [data-reveal-section].is-visible .starters-decor-top {
+      transition-delay: 250ms;
+    }
+
+    [data-reveal-section].is-visible .starters-decor-bottom {
+      transition-delay: 420ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal-section] *,
+      [data-reveal-section] .starters-decor,
+      [data-reveal-section] .starter-card,
+      [data-reveal-section] .starter-card img {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <script>
+    const startersSection = document.querySelector("[data-reveal-section]");
+    const starterCards = document.querySelectorAll(".starter-card");
+
+    if (startersSection && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const sectionObserver = new IntersectionObserver(
+        ([entry], observer) => {
+          if (!entry.isIntersecting) return;
+
+          startersSection.classList.add("is-visible");
+          observer.unobserve(startersSection);
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -7% 0px",
+        }
+      );
+
+      sectionObserver.observe(startersSection);
+
+      starterCards.forEach((card, index) => {
+        card.style.setProperty("--card-delay", `${index * 90}ms`);
+
+        const cardObserver = new IntersectionObserver(
+          ([entry], observer) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-card-visible");
+            observer.unobserve(entry.target);
+          },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -5% 0px",
+          }
+        );
+
+        cardObserver.observe(card);
+      });
+    } else {
+      startersSection?.classList.add("is-visible");
+      starterCards.forEach((card) => card.classList.add("is-card-visible"));
+    }
+  </script>
+
+</section>

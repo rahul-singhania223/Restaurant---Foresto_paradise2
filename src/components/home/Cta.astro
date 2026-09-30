@@ -1,0 +1,494 @@
+---
+/*
+ * Foresto Paradise — Plan Your Visit Section
+ * Smooth scroll + reveal animations
+ */
+---
+
+<section
+  id="plan-your-visit"
+  class="plan-visit relative isolate overflow-hidden bg-[#FDFBF7] py-20 text-[#171714] sm:py-24 lg:py-[120px]"
+  aria-labelledby="plan-your-visit-title"
+>
+  <!-- ==========================================
+       BACKGROUND ELEMENTS & ATMOSPHERE
+       ========================================== -->
+
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    aria-hidden="true"
+  >
+    <!-- Soft warm glow -->
+    <div
+      class="absolute -left-[10%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#F5EFE6] opacity-70 blur-[120px] animate-glow"
+    ></div>
+
+    <!-- Decorative arch -->
+    <svg
+      viewBox="0 0 500 500"
+      class="decorative-arch absolute left-[30%] top-[30%] h-[500px] w-[500px] -translate-y-1/2 text-[#D7CCC0] opacity-30"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle
+        cx="250"
+        cy="250"
+        r="249"
+        stroke="currentColor"
+        stroke-width="1.5"
+      />
+    </svg>
+
+    <!-- Small decorative blur -->
+    <div
+      class="absolute -right-32 bottom-[-100px] h-[400px] w-[400px] rounded-full bg-[#EFE5D8] opacity-50 blur-[100px]"
+    ></div>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
+    <div
+      class="grid items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-8"
+    >
+      <!-- ==========================================
+           LEFT COLUMN
+           ========================================== -->
+
+      <div class="relative z-10 lg:pr-10">
+        <!-- Eyebrow -->
+        <div
+          class="reveal reveal-eyebrow flex items-center gap-4"
+        >
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A87343]"
+          >
+            Plan Your Visit
+          </span>
+
+          <span class="h-px w-16 bg-[#A87343]/40"></span>
+        </div>
+
+        <!-- Heading -->
+        <h2
+          id="plan-your-visit-title"
+          class="reveal reveal-heading mt-6 font-['Cormorant_Garamond'] text-[clamp(3.2rem,5vw,5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#171714]"
+        >
+          Good Food
+          <br />
+          <span class="text-[#8E5C35]">
+            Brings People Together
+          </span>
+        </h2>
+
+        <!-- Description -->
+        <p
+          class="reveal reveal-description mt-6 max-w-[480px] text-[15px] leading-[1.65] text-[#5A5752] sm:text-[17px]"
+        >
+          Whether it's a casual meal, a family celebration or a special
+          occasion, we'd love to welcome you at Foresto Paradise.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          class="reveal reveal-actions mt-10 flex flex-wrap items-center gap-4"
+        >
+          <!-- Reserve -->
+          <a
+            href="#reserve"
+            class="group flex h-[54px] items-center gap-4 rounded-full bg-[#996536] px-8 text-[14px] font-medium text-white shadow-[0_8px_20px_rgba(153,101,54,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#85552A] hover:shadow-[0_14px_30px_rgba(153,101,54,0.3)] focus:outline-none focus:ring-2 focus:ring-[#A87343]/40 focus:ring-offset-2"
+          >
+            <!-- Calendar -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M15.6947 13.7H15.7037M15.6947 16.7H15.7037M11.9947 13.7H12.0047M11.9947 16.7H12.0047M8.29474 13.7H8.30374M8.29474 16.7H8.30374"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span>Reserve a Table</span>
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 12H19M13 6L19 12L13 18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <!-- Call -->
+          <a
+            href="tel:+919123456789"
+            class="group flex h-[54px] items-center gap-3 rounded-full border border-[#D7CCC0] bg-transparent px-8 text-[14px] font-medium text-[#171714] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#A87343] hover:bg-[#A87343]/5 hover:text-[#A87343] focus:outline-none focus:ring-2 focus:ring-[#A87343]/30"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+              aria-hidden="true"
+            >
+              <path
+                d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span>Call Us</span>
+          </a>
+        </div>
+
+        <!-- Small reassurance -->
+        <div
+          class="reveal reveal-note mt-7 flex items-center gap-2 text-[11px] text-[#8A8178]"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-[#A87343]"></span>
+          <span>Walk-ins are welcome subject to availability.</span>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           RIGHT COLUMN: IMAGE
+           ========================================== -->
+
+      <div class="relative z-10 mt-10 w-full lg:mt-0">
+        <div
+          class="reveal reveal-image relative aspect-[4/3] w-full overflow-hidden rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.12)] sm:rounded-l-[80px] md:aspect-[16/10] lg:aspect-[4/3]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85"
+            alt="Beautifully set dining table with warm lighting at Foresto Paradise"
+            loading="lazy"
+            decoding="async"
+            class="visit-image h-full w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.045]"
+          />
+
+          <!-- Gradient -->
+          <div
+            class="pointer-events-none absolute inset-0 bg-gradient-to-l from-black/10 via-transparent to-black/5"
+          ></div>
+
+          <!-- Image shine -->
+          <div
+            class="image-shine pointer-events-none absolute inset-y-0 -left-[30%] w-[25%] skew-x-[-20deg] bg-white/15"
+          ></div>
+        </div>
+
+        <!-- Floating accent -->
+        <div
+          class="reveal reveal-floating absolute -bottom-6 left-6 hidden rounded-2xl border border-white/70 bg-white/85 px-5 py-4 shadow-[0_15px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl sm:block lg:-left-8"
+        >
+          <p class="font-serif text-[22px] font-semibold text-[#171714]">
+            A table awaits.
+          </p>
+          <p class="mt-1 text-[11px] uppercase tracking-[0.15em] text-[#8A8178]">
+            Come dine with us
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+
+  :global(html) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  .plan-visit {
+    --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /*
+   * Reveal animation
+   */
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+    transition:
+      opacity 850ms var(--reveal-ease),
+      transform 850ms var(--reveal-ease);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /*
+   * Staggered timing
+   */
+  .reveal-eyebrow {
+    transition-delay: 0ms;
+  }
+
+  .reveal-heading {
+    transition-delay: 100ms;
+  }
+
+  .reveal-description {
+    transition-delay: 180ms;
+  }
+
+  .reveal-actions {
+    transition-delay: 260ms;
+  }
+
+  .reveal-note {
+    transition-delay: 340ms;
+  }
+
+  /*
+   * Image reveal
+   */
+  .reveal-image {
+    opacity: 0;
+    transform: translate3d(40px, 20px, 0) scale(0.975);
+    transition:
+      opacity 1000ms var(--reveal-ease),
+      transform 1200ms var(--reveal-ease);
+  }
+
+  .reveal-image.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  /*
+   * Floating card
+   */
+  .reveal-floating {
+    opacity: 0;
+    transform: translate3d(-15px, 20px, 0);
+    transition:
+      opacity 800ms var(--reveal-ease),
+      transform 800ms var(--reveal-ease);
+    transition-delay: 450ms;
+  }
+
+  .reveal-floating.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /*
+   * Background atmosphere
+   */
+  .animate-glow {
+    animation: softGlow 10s ease-in-out infinite alternate;
+  }
+
+  .decorative-arch {
+    animation: archFloat 14s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  @keyframes softGlow {
+    0% {
+      transform: translate3d(-10px, 0, 0) scale(1);
+    }
+
+    100% {
+      transform: translate3d(35px, -20px, 0) scale(1.08);
+    }
+  }
+
+  @keyframes archFloat {
+    0% {
+      transform: translate3d(0, -50%, 0) rotate(0deg);
+    }
+
+    100% {
+      transform: translate3d(20px, calc(-50% - 10px), 0) rotate(3deg);
+    }
+  }
+
+  /*
+   * Image shine
+   */
+  .reveal-image.is-visible .image-shine {
+    animation: imageShine 1.4s cubic-bezier(0.22, 1, 0.36, 1) 500ms both;
+  }
+
+  @keyframes imageShine {
+    0% {
+      left: -30%;
+    }
+
+    100% {
+      left: 130%;
+    }
+  }
+
+  /*
+   * Respect reduced-motion preferences
+   */
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+
+    .reveal,
+    .reveal-image,
+    .reveal-floating {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .animate-glow,
+    .decorative-arch,
+    .image-shine {
+      animation: none;
+    }
+
+    .visit-image {
+      transition: none;
+    }
+  }
+
+  /*
+   * Mobile adjustments
+   */
+  @media (max-width: 640px) {
+    .reveal-image {
+      transform: translate3d(0, 28px, 0) scale(0.98);
+    }
+
+    .reveal-image.is-visible {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const initPlanVisit = () => {
+      const section = document.querySelector<HTMLElement>("#plan-your-visit");
+
+      if (!section || section.dataset.initialized === "true") return;
+
+      section.dataset.initialized = "true";
+
+      const revealElements = Array.from(
+        section.querySelectorAll<HTMLElement>(
+          ".reveal, .reveal-image, .reveal-floating"
+        )
+      );
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      /*
+       * If reduced motion is enabled, show everything immediately.
+       */
+      if (prefersReducedMotion) {
+        revealElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      /*
+       * Scroll reveal observer
+       */
+      const observer = new IntersectionObserver(
+        (entries, observerInstance) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const element = entry.target as HTMLElement;
+
+            element.classList.add("is-visible");
+
+            observerInstance.unobserve(element);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -70px 0px",
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      /*
+       * Smooth scrolling for internal anchors.
+       *
+       * This supplements CSS scroll-behavior and makes sure
+       * dynamically rendered Astro content behaves correctly.
+       */
+      const internalLinks = section.querySelectorAll<HTMLAnchorElement>(
+        'a[href^="#"]'
+      );
+
+      internalLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const href = link.getAttribute("href");
+
+          if (!href || href === "#") return;
+
+          const target = document.querySelector<HTMLElement>(href);
+
+          if (!target) return;
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+          /*
+           * Keep browser history useful without jumping.
+           */
+          window.history.pushState(null, "", href);
+        });
+      });
+    };
+
+    /*
+     * Astro page navigation support.
+     */
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initPlanVisit, {
+        once: true,
+      });
+    } else {
+      initPlanVisit();
+    }
+
+    document.addEventListener("astro:page-load", initPlanVisit);
+  })();
+</script>

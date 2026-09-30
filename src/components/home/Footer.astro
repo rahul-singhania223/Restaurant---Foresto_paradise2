@@ -1,0 +1,228 @@
+---
+/*
+ * Foresto Paradise — Footer Section
+ */
+---
+
+<footer id="contact" class="relative isolate overflow-hidden bg-[#1A1816] pt-28 pb-12 text-[#E8E4DB]">
+  
+  <!-- ==========================================
+       TOP CURVED WAVE BORDER
+       ========================================== -->
+  <div class="absolute inset-x-0 top-0 overflow-hidden leading-none pointer-events-none -translate-y-[1px]">
+    <svg viewBox="0 0 1440 120" fill="none" class="relative block w-full h-12 md:h-20 text-[#FDFBF7]" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,32 C320,95 640,95 960,64 C1280,32 1380,64 1440,96 L1440,0 L0,0 Z" fill="currentColor"></path>
+    </svg>
+  </div>
+
+  <!-- Background Image & Decorative Glows -->
+  <div class="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
+    <!-- Unsplash Dark Ambiance Background -->
+    <img 
+      src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=2000&q=80" 
+      alt="Dark restaurant ambiance" 
+      class="h-full w-full object-cover opacity-10 mix-blend-overlay"
+    />
+  </div>
+  
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute -right-[10%] bottom-[10%] h-[400px] w-[400px] rounded-full bg-[#A87343]/15 blur-[120px]"></div>
+    <!-- Botanical line art bottom right -->
+    <svg viewBox="0 0 200 200" class="absolute -bottom-10 -right-10 h-64 w-64 text-[#A87343]/20" fill="none" aria-hidden="true">
+      <path d="M200 200C150 180 120 130 110 80C100 130 70 180 0 200C70 190 100 160 110 110C120 160 150 190 200 200Z" stroke="currentColor" stroke-width="1" />
+      <path d="M150 130C130 115 115 90 110 60" stroke="currentColor" stroke-width="1" />
+    </svg>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-10">
+    
+    <!-- ==========================================
+         MAIN FOOTER CONTENT GRID
+         ========================================== -->
+    <div class="grid grid-cols-1 gap-12 pb-16 border-b border-[#2C2925] md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.4fr] lg:gap-8">
+      
+      <!-- Col 1: Brand & Bio -->
+      <div class="flex flex-col reveal-on-scroll delay-100">
+        <!-- Logo -->
+        <a href="#home" class="group inline-block">
+          <div class="flex items-center gap-2.5 text-white">
+            <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-[#A87343]" aria-hidden="true">
+              <path d="M12 21C16.5 21 19 18.1 19 14.4C19 10.3 16.1 8.2 14.1 5C13.7 8.4 11.8 9.6 10.5 10.8C9.5 8.7 9.8 6.8 10.5 5C6.9 7.2 5 10.8 5 14.2C5 18.1 7.6 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            <span class="font-['Cormorant_Garamond'] text-[24px] font-bold tracking-[0.2em] uppercase">Foresto</span>
+          </div>
+          <p class="mt-1 text-[10px] tracking-[0.35em] uppercase text-[#A87343] pl-8">Paradise</p>
+        </a>
+
+        <!-- Description -->
+        <p class="mt-6 max-w-[280px] text-[14px] leading-relaxed text-[#A39E93]">
+          Great food, warm hospitality and memorable moments — that's what Foresto Paradise is all about.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="mt-8 flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded-full border border-[#332F2A] text-[#D1CCC0] transition-all hover:border-[#A87343] hover:bg-[#A87343] hover:text-white hover:-translate-y-1">
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 11.37C16.1234 12.2022 15.9813 13.0474 15.5937 13.799C15.206 14.5506 14.5937 15.1729 13.8368 15.5843C13.0799 15.9957 12.2135 16.177 11.3534 16.1054C10.4933 16.0338 9.68004 15.7126 9.00371 15.1837C8.32737 14.6548 7.82367 13.9431 7.56149 13.1341C7.29931 12.325 7.29023 11.4578 7.53556 10.6441C7.78089 9.83043 8.26938 9.10848 8.93481 8.57147C9.60024 8.03445 10.4109 7.70559 11.26 7.62C12.2933 7.5165 13.3323 7.85406 14.1165 8.55743C14.9007 9.2608 15.3671 10.2783 16 11.37Z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-full border border-[#332F2A] text-[#D1CCC0] transition-all hover:border-[#A87343] hover:bg-[#A87343] hover:text-white hover:-translate-y-1">
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+              <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TripAdvisor" class="flex h-10 w-10 items-center justify-center rounded-full border border-[#332F2A] text-[#D1CCC0] transition-all hover:border-[#A87343] hover:bg-[#A87343] hover:text-white hover:-translate-y-1">
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+              <path d="M12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="reveal-on-scroll delay-200">
+        <h4 class="font-serif text-[18px] font-semibold text-white tracking-wide">Quick Links</h4>
+        <ul class="mt-6 flex flex-col gap-3.5 text-[14px] text-[#A39E93]">
+          <li><a href="#home" class="transition-colors hover:text-white hover:translate-x-1 inline-block transform duration-300">Home</a></li>
+          <li><a href="#about" class="transition-colors hover:text-white hover:translate-x-1 inline-block transform duration-300">About Us</a></li>
+          <li><a href="#menu" class="transition-colors hover:text-white hover:translate-x-1 inline-block transform duration-300">Menu</a></li>
+          <li><a href="#services" class="transition-colors hover:text-white hover:translate-x-1 inline-block transform duration-300">Our Services</a></li>
+          <li><a href="#locations" class="transition-colors hover:text-white hover:translate-x-1 inline-block transform duration-300">Our Outlets</a></li>
+          <li><a href="#gallery" class="transition-colors hover:text-white hover:translate-x-1 inline-block transform duration-300">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact Us -->
+      <div class="reveal-on-scroll delay-300">
+        <h4 class="font-serif text-[18px] font-semibold text-white tracking-wide">Contact Us</h4>
+        <ul class="mt-6 flex flex-col gap-4 text-[14px] text-[#A39E93]">
+          <li class="flex items-start gap-3">
+            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-4 w-4 shrink-0 text-[#A87343]" aria-hidden="true">
+              <path d="M12 11.2002C13.9882 11.2002 15.6 9.58841 15.6 7.6002C15.6 5.61198 13.9882 4.0002 12 4.0002C10.0118 4.0002 8.4 5.61198 8.4 7.6002C8.4 9.58841 10.0118 11.2002 12 11.2002Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.5901 20.0001C18.5901 16.9201 15.6401 14.4102 12.0001 14.4102C8.36006 14.4102 5.41006 16.9201 5.41006 20.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Lane 7, Koregaon Park, Pune, Maharashtra 411001</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 shrink-0 text-[#A87343]" aria-hidden="true">
+              <path d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="tel:+919123456789" class="transition-colors hover:text-white">+91 91234 56789</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 shrink-0 text-[#A87343]" aria-hidden="true">
+              <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="mailto:hello@forestoparadise.com" class="transition-colors hover:text-white">hello@forestoparadise.com</a>
+          </li>
+          <li class="flex items-start gap-3 pt-1">
+            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-4 w-4 shrink-0 text-[#A87343]" aria-hidden="true">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <p>11:00 AM – 11:30 PM</p>
+              <p class="text-[12px] text-[#7A756D]">Everyday</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Stay Updated (Newsletter) -->
+      <div class="reveal-on-scroll delay-400">
+        <h4 class="font-serif text-[18px] font-semibold text-white tracking-wide">Stay Updated</h4>
+        <p class="mt-6 text-[14px] leading-relaxed text-[#A39E93]">
+          Get the latest updates, special offers and events from Foresto Paradise.
+        </p>
+
+        <form class="mt-5 flex items-center rounded-xl border border-[#332F2A] bg-[#221F1C]/80 backdrop-blur-sm p-1.5 focus-within:border-[#A87343] transition-colors">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            required
+            class="w-full bg-transparent px-3.5 py-2 text-[14px] text-white placeholder-[#7A756D] focus:outline-none"
+          />
+          <button 
+            type="submit" 
+            aria-label="Subscribe"
+            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#A87343] text-white transition-all hover:bg-[#8E5C35] hover:shadow-lg"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+              <path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- ==========================================
+         BOTTOM COPYRIGHT & LEGAL
+         ========================================== -->
+    <div class="mt-8 flex flex-col items-center justify-between gap-4 text-[13px] text-[#8C867D] md:flex-row reveal-on-scroll delay-500">
+      <p>&copy; 2026 Foresto Paradise. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/privacy-policy" class="transition-colors hover:text-white">Privacy Policy</a>
+        <span>|</span>
+        <a href="/terms" class="transition-colors hover:text-white">Terms & Conditions</a>
+        <span>|</span>
+        <a href="/sitemap" class="transition-colors hover:text-white">Sitemap</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Reveal Animations Logic
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          revealObserver.unobserve(entry.target); // Unobserve to animate only once
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: "0px 0px -20px 0px"
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  });
+</script>
+
+<style>
+  /* Ensure Cormorant Garamond is loaded for headers */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap');
+
+  /* Smooth scrolling globally for the page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reveal Animations */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+  
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Animation Delays */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+</style>

@@ -1,0 +1,228 @@
+---
+// Philosophy.astro — "Our Philosophy" section (Astro + Tailwind, works on v3 and v4, no config changes needed)
+
+const image = {
+  // Swap this for any Unsplash photo: https://images.unsplash.com/photo-<ID>?auto=format&fit=crop&w=1400&q=80
+  src: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1400&q=80",
+  alt: "Grilled paneer tikka on a dark plate with mint chutney and garnish",
+};
+
+const features = [
+  {
+    title: "Fresh Ingredients",
+    note: "",
+    icon: `<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>`,
+  },
+  {
+    title: "Authentic Recipes",
+    note: "",
+    icon: `<path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/>`,
+  },
+  {
+    title: "Made With Love",
+    note: "",
+    icon: `<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>`,
+  },
+  {
+    title: "Better Together",
+    note: "",
+    icon: `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  },
+];
+
+// One curve, reused for the image mask and the gold outline (0–1 coordinates)
+const curve = "M0.02,0 C0.08,0.15 0.29,0.25 0.32,0.42 C0.36,0.65 0.2,0.9 0.04,1";
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Mrs+Saint+Delafield&family=Playfair+Display:wght@700&display=swap"
+  rel="stylesheet"
+/>
+
+<section
+  data-reveal-section
+  id="philosophy"
+  class="relative isolate flex flex-col overflow-hidden bg-[#FBF8F3] font-['DM_Sans',sans-serif] lg:min-h-[32rem] lg:flex-row lg:items-center"
+>
+  <!-- soft warm wash on the left -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_30%,#ffffff_0%,#FBF8F3_55%,#F5EEE2_100%)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- sketched leaf, top-left -->
+  <svg
+    class="pointer-events-none absolute -left-4 -top-4 h-40 w-40 text-[#b9b2a6] opacity-60 sm:h-52 sm:w-52"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1"
+    stroke-linecap="round"
+    aria-hidden="true"
+  >
+    <path d="M10 20C60 30 110 70 150 190"></path>
+    <path d="M60 40c-5 25-25 40-45 45 20 10 45 5 60-15z"></path>
+    <path d="M95 75c10 25 5 50-15 70 30-2 55-25 50-60z"></path>
+    <path d="M40 25c25-5 45 5 55 25-25 10-50 0-55-25z"></path>
+    <path d="M120 110c20 5 35 25 30 55-25-10-35-30-30-55z"></path>
+  </svg>
+
+  <!-- blurred foliage, bottom-left -->
+  <div class="pointer-events-none absolute -bottom-10 -left-8 -z-0 h-40 w-56 rotate-[-12deg] rounded-[100%_0] bg-[#5b7a3f]/50 blur-xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-6 left-24 -z-0 h-24 w-40 rotate-6 rounded-[100%_0] bg-[#3f5a2a]/40 blur-lg" aria-hidden="true"></div>
+
+  <!-- CONTENT -->
+  <div data-reveal="content" class="relative z-10 px-6 py-12 sm:px-10 lg:w-[58%] lg:py-14 lg:pl-[7%] lg:pr-6">
+    <div data-reveal="eyebrow" class="flex items-center gap-4 text-[#B0701F]">
+      <span class="h-px w-16 bg-current opacity-70 sm:w-20"></span>
+      <p class="text-xs font-medium uppercase tracking-[0.3em]">Our Philosophy</p>
+      <span class="hidden h-px w-16 bg-current opacity-70 sm:block sm:w-20"></span>
+    </div>
+
+    <h2 data-reveal="title"
+      class="mt-6 font-['Playfair_Display',serif] text-[clamp(2.25rem,4.2vw,4.4rem)] font-bold leading-[1.05] tracking-tight"
+    >
+      <span class="block text-[#0d0d0d]">Good Food</span>
+      <span class="block bg-gradient-to-r from-[#A5651A] to-[#C98B34] bg-clip-text text-transparent">
+        Brings People Together
+      </span>
+    </h2>
+
+    <p data-reveal="copy" class="mt-6 max-w-xl text-[clamp(0.95rem,1.05vw,1.1rem)] leading-relaxed text-[#77706a]">
+      At Foresto Paradise, every dish is crafted with fresh ingredients, authentic flavours and a deep love for great food.
+      <span class="block">Because the best moments always happen around the table.</span>
+    </p>
+
+    <ul data-reveal="features" class="mt-9 grid grid-cols-2 gap-x-4 gap-y-7 lg:grid-cols-4 lg:gap-x-3">
+      {
+        features.map((f) => (
+          <li data-reveal-item class="flex flex-col items-center text-center">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-[#F3E7D6] text-[#B0701F] lg:h-14 lg:w-14">
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                set:html={f.icon}
+              />
+            </span>
+            <h3 class="mt-4 max-w-[9rem] text-[0.65rem] font-medium uppercase leading-relaxed tracking-[0.25em] text-[#3a3631]">
+              {f.title}
+            </h3>
+            <span class="my-2 h-px w-8 bg-[#B0701F]/70" />
+            <p class="text-[0.8rem] text-[#77706a]">{f.note}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- IMAGE -->
+  <div data-reveal="image" class="relative h-80 w-full sm:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-1/2">
+    <div class="h-full w-full overflow-hidden lg:[clip-path:url(#philosophy-curve)]">
+      <img
+        src={image.src}
+        alt={image.alt}
+        loading="lazy"
+        class="h-full w-full bg-[#2a1d12] object-cover object-[65%_60%]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1a0f06]/40 via-transparent to-[#1a0f06]/30"></div>
+    </div>
+
+    <!-- gold outline that follows the curve -->
+    <svg
+      class="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
+      viewBox="0 0 1 1"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path d={curve} fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="16" vector-effect="non-scaling-stroke" class="blur-[4px]"></path>
+      <path d={curve} fill="none" stroke="#D3A15A" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+
+    <!-- script tagline -->
+    <div data-reveal="tagline" class="absolute right-[6%] top-[8%] w-[9rem] -rotate-[8deg] text-white/90 sm:w-[12rem]">
+      <p class="font-['Mrs_Saint_Delafield',cursive] text-[2rem] leading-[0.85] [text-shadow:0_2px_12px_rgba(0,0,0,0.5)] sm:text-[2.6rem]">
+        More Than Just A Meal
+      </p>
+      <span class="mt-3 ml-8 block h-px w-14 bg-white/70"></span>
+    </div>
+
+    <!-- blurred leaf overlapping the photo edge -->
+    <div class="pointer-events-none absolute -bottom-8 left-[8%] hidden h-32 w-24 rotate-[25deg] rounded-[100%_0] bg-[#5f8a3a]/60 blur-md lg:block" aria-hidden="true"></div>
+  </div>
+
+  <!-- clip-path definition (objectBoundingBox so it scales with the container) -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="philosophy-curve" clipPathUnits="objectBoundingBox">
+        <path d={`${curve} L1,1 L1,0 Z`}></path>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <style>
+    [data-reveal],
+    [data-reveal-item] {
+      opacity: 0;
+      transform: translateY(22px);
+      will-change: transform, opacity;
+      transition:
+        opacity 800ms cubic-bezier(.22,1,.36,1),
+        transform 900ms cubic-bezier(.22,1,.36,1);
+    }
+    [data-reveal="image"] { transform: translateX(24px) scale(1.025); }
+    [data-reveal="tagline"] { transform: translateY(12px) rotate(-8deg); }
+    [data-reveal].is-visible,
+    [data-reveal-item].is-visible {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+    [data-reveal="image"].is-visible img {
+      transform: scale(1);
+    }
+    [data-reveal="image"] img {
+      transform: scale(1.035);
+      transition: transform 1400ms cubic-bezier(.22,1,.36,1);
+    }
+    [data-reveal-item]:nth-child(1) { transition-delay: 80ms; }
+    [data-reveal-item]:nth-child(2) { transition-delay: 160ms; }
+    [data-reveal-item]:nth-child(3) { transition-delay: 240ms; }
+    [data-reveal-item]:nth-child(4) { transition-delay: 320ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal], [data-reveal-item], [data-reveal="image"] img {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+  <script>
+    const revealEls = document.querySelectorAll(
+      '[data-reveal], [data-reveal-item]'
+    );
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('is-visible'));
+    }
+  </script>
+
+</section>
